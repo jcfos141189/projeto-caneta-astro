@@ -1,0 +1,79 @@
+---
+// Button Component — BNI Nikiti Design System
+interface Props {
+    id?: string;
+    href?: string;
+    type?: 'button' | 'submit' | 'reset';
+    variant?: 'beam' | 'conic' | 'tab-dark' | 'tab-outline' | 'tab-ghost';
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    radius?: string;
+    class?: string;
+    wrapperClass?: string;
+    [key: string]: any;
+}
+
+const {
+    id,
+    href,
+    type = 'button',
+    variant = 'beam',
+    size = 'md',
+    radius = 'rounded-lg',
+    class: className = '',
+    wrapperClass = '',
+    ...rest
+} = Astro.props;
+
+const Element = href ? 'a' : 'button';
+const elementProps = href ? { href, ...rest } : { type, ...rest };
+
+// Size maps for beam variant
+const beamSizeClasses = {
+    xs: 'px-3 py-1.5 text-[11px] gap-2',
+    sm: 'px-4 md:px-5 py-2 text-xs gap-2',
+    md: 'px-6 py-2.5 text-xs gap-3',
+    lg: 'px-7 py-3.5 text-xs sm:text-sm gap-3 shadow-md',
+    xl: 'px-8 py-4 text-xs sm:text-sm gap-3 shadow-lg',
+};
+
+// Slightly rounded tabs radius (rounded-md by default for small tabs)
+const tabRadius = radius === 'rounded-lg' ? 'rounded-md' : radius;
+
+// Base style mapping by variant
+let variantClasses = '';
+if (variant === 'beam') {
+    variantClasses = `beam-button inline-flex items-center justify-center ${radius} bg-stone-900 hover:bg-black text-white font-medium tracking-wide shadow-sm ${beamSizeClasses[size] || beamSizeClasses.md}`;
+} else if (variant === 'tab-dark') {
+    variantClasses = `px-3.5 py-1.5 ${tabRadius} text-xs font-mono font-medium transition-all duration-300 bg-stone-900 text-white shadow-xs`;
+} else if (variant === 'tab-outline') {
+    variantClasses = `px-3.5 py-1.5 ${tabRadius} text-xs font-mono font-medium transition-all duration-300 border border-stone-300 bg-white text-stone-700 hover:bg-stone-900 hover:text-white`;
+} else if (variant === 'tab-ghost') {
+    variantClasses = `px-3 py-1.5 ${tabRadius} text-xs font-mono font-medium transition-all duration-300 border border-stone-300 bg-white text-stone-500 hover:text-stone-900 hover:border-stone-500`;
+}
+---
+
+{variant === 'conic' ? (
+    <div class:list={["conic-beam-wrapper group cursor-pointer shadow-lg", wrapperClass]}>
+        <span class="conic-beam-spin"></span>
+        <Element
+            id={id}
+            class:list={[
+                "relative z-10 flex items-center justify-center gap-3 bg-stone-900 px-8 py-4 text-white hover:bg-black transition-colors",
+                radius,
+                className
+            ]}
+            {...elementProps}
+        >
+            <slot />
+        </Element>
+    </div>
+) : (
+    <Element
+        id={id}
+        class:list={[variantClasses, className]}
+        {...elementProps}
+    >
+        <slot />
+    </Element>
+)}
+

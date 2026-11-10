@@ -1,0 +1,47 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - navigation "Navegação Principal" [ref=e4]:
+        - link "Início" [ref=e5] [cursor=pointer]:
+          - /url: /#hero
+        - link "Sobre" [ref=e6] [cursor=pointer]:
+          - /url: /#craft
+        - link "Tintas" [ref=e7] [cursor=pointer]:
+          - /url: /#tintas
+        - link "Loja" [ref=e8] [cursor=pointer]:
+          - /url: /#specs
+        - link "Página 2" [ref=e9] [cursor=pointer]:
+          - /url: /pagina-2
+        - link "Sistema.v4" [ref=e10] [cursor=pointer]:
+          - /url: /assets/design_system.html
+      - link "Início BNI Nikiti" [ref=e11] [cursor=pointer]:
+        - /url: "#hero"
+        - generic [ref=e18]: BNI NIKITI.01
+      - generic [ref=e19]:
+        - button "Buscar" [ref=e20] [cursor=pointer]
+        - button "Sacola de Compras" [ref=e24] [cursor=pointer]:
+          - generic [ref=e28]: "1"
+        - link "Comprar Agora" [ref=e29] [cursor=pointer]:
+          - /url: "#buy-cta"
+  - main [ref=e32]:
+    - generic [ref=e33]:
+      - generic [ref=e34]: Página 02 // Em Branco
+      - heading "Segunda Página" [level=1] [ref=e37]
+      - paragraph [ref=e38]: Esta página está limpa e pronta para receber qualquer novo layout, componente ou conteúdo que você desejar.
+      - link "← Voltar para Início" [ref=e40] [cursor=pointer]:
+        - /url: /
+  - contentinfo [ref=e42]:
+    - generic [ref=e43]:
+      - generic [ref=e44]: BNI NIKITI // PIGMENTUM 0.1
+      - generic [ref=e50]:
+        - link "Início" [ref=e51] [cursor=pointer]:
+          - /url: "#hero"
+        - link "Manifesto" [ref=e52] [cursor=pointer]:
+          - /url: "#specs"
+        - link "Estúdio" [ref=e53] [cursor=pointer]:
+          - /url: "#studio"
+        - link "Adquirir" [ref=e54] [cursor=pointer]:
+          - /url: "#buy-cta"
+        - link "Sistema v4.0" [ref=e55] [cursor=pointer]:
+          - /url: /assets/design_system.html
+      - generic [ref=e56]: © 2026 BNI NIKITI. PROJETADA PARA O RIGOR ARQUITETURAL.

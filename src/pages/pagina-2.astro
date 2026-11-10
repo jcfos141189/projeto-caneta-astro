@@ -1,0 +1,421 @@
+---
+// Catálogo de Produtos — BNI Nikiti Pigmentum
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+
+import { PENS as pens } from '../data/pens';
+---
+
+<Layout title="Catálogo de Instrumentos de Precisão — BNI Nikiti" activeItem="catalogo">
+    <main class="min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 px-6 md:px-12 lg:px-16 relative overflow-hidden bg-[#F5F5F0]">
+        
+        <!-- Fundo Sutil de Grid Arquitetural & Gradiente Atmosférico -->
+        <div class="absolute inset-0 bg-grid-architect pointer-events-none opacity-45"></div>
+        <div class="absolute top-10 right-10 w-[550px] h-[550px] bg-gradient-to-bl from-stone-200/50 via-orange-50/20 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1440px] mx-auto relative z-10">
+
+            <!-- 1. Cabeçalho Editorial do Catálogo -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 mb-12 border-b border-stone-300">
+                <div>
+                    <!-- Eyebrow Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-300 bg-white/80 backdrop-blur-md mb-3.5 shadow-2xs">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#FF3300] animate-pulse"></span>
+                        <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-stone-600">Catálogo Completo // 09 Modelos</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-stone-900 leading-[1.08]">
+                        Instrumentos de <span class="font-serif italic font-normal text-[1.12em] tracking-tight lettering-image-clip">Precisão</span> Arquitetural.
+                    </h1>
+                    
+                    <p class="text-stone-600 text-xs sm:text-sm md:text-[0.95rem] max-w-xl mt-3 leading-relaxed">
+                        Nove canetas calibradas em centro de usinagem CNC de 5 eixos para as diversas fases do raciocínio projetual — do primeiro traço conceitual à prancha executiva final.
+                    </p>
+                </div>
+
+                <!-- Resumo de Contagem & Filtros Rápidos -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                    <span class="font-mono text-xs text-stone-500 uppercase tracking-widest">
+                        Exibindo <strong>9 de 9</strong> instrumentos
+                    </span>
+                    <a href="/#tintas" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-stone-700 hover:text-stone-900 border border-stone-300 bg-white/70 px-3 py-1.5 rounded-md transition-colors">
+                        <span>Ver Paleta de Tintas</span>
+                        <span class="text-[#FF3300]">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Grade Responsiva com os 9 Cards de Canetas (3x3) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {pens.map((pen) => (
+                    <article 
+                        class="p-6 sm:p-7 rounded-2xl border border-stone-300/80 bg-white/85 backdrop-blur-sm flex flex-col justify-between hover:border-stone-900 hover:shadow-[0_20px_45px_-10px_rgba(28,28,28,0.1)] transition-all duration-400 group relative"
+                    >
+                        <!-- Cantoneiras Industriais no Card -->
+                        <div class="art-corner-mark -top-2 -left-2 border-t border-l border-stone-900 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="art-corner-mark -top-2 -right-2 border-t border-r border-stone-900 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                        <!-- Top Header do Card: Modelo & Status -->
+                        <div>
+                            <div class="flex items-center justify-between gap-3 pb-3 mb-4 border-b border-stone-200/80">
+                                <span class="font-mono text-[11px] font-semibold text-stone-900 tracking-wider">
+                                    {pen.model}
+                                </span>
+                                <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-stone-600 bg-stone-100 px-2 py-0.5 rounded">
+                                    <span class={`w-1.5 h-1.5 rounded-full ${pen.badgeColor} animate-pulse`}>●</span>
+                                    <span>{pen.status}</span>
+                                </div>
+                            </div>
+
+                            <!-- Imagem Fotográfica Fictícia da Caneta (com link para detalhes) -->
+                            <a 
+                                href={`/pagina-3?id=${pen.id}`}
+                                class="relative w-full aspect-[16/10] mb-5 rounded-xl border border-stone-200/90 bg-stone-100 overflow-hidden group/img shadow-2xs block cursor-pointer"
+                                title={`Ver ficha técnica de ${pen.title}`}
+                            >
+                                <img 
+                                    src={pen.image} 
+                                    alt={pen.title} 
+                                    class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
+                                    loading="eager" 
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+                                <span class="absolute bottom-2.5 right-2.5 bg-stone-900/85 backdrop-blur-md text-white font-mono text-[9px] uppercase tracking-widest px-2.5 py-0.5 rounded border border-white/10 shadow-xs">
+                                    {pen.tip.split(" ")[0]}
+                                </span>
+                                <span class="absolute top-2.5 right-2.5 bg-stone-900/85 backdrop-blur-md text-white font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 shadow-xs">
+                                    <span>Ficha Técnica</span>
+                                    <span class="text-[#FF3300]">→</span>
+                                </span>
+                            </a>
+
+                            <!-- Título & Subtítulo -->
+                            <h2 class="text-xl font-bold text-stone-900 tracking-tight leading-snug group-hover:text-black transition-colors">
+                                <a href={`/pagina-3?id=${pen.id}`} class="hover:text-[#FF3300] transition-colors">
+                                    {pen.title}
+                                </a>
+                            </h2>
+                            <div class="font-mono text-[11px] text-[#FF3300] uppercase tracking-wider mt-0.5 mb-2.5">
+                                {pen.series}
+                            </div>
+
+                            <!-- Descrição -->
+                            <p class="text-xs text-stone-600 leading-relaxed mb-5">
+                                {pen.description}
+                            </p>
+
+                            <!-- Informações Úteis (Grid de Especificações Técnicas) -->
+                            <div class="grid grid-cols-2 gap-2.5 py-3 mb-5 border-y border-stone-200/80 text-xs font-mono">
+                                <div class="bg-stone-50/80 p-2 rounded border border-stone-200/60">
+                                    <span class="text-[9px] uppercase tracking-wider text-stone-400 block mb-0.5">PONTA</span>
+                                    <strong class="text-stone-800 text-[11px] font-semibold">{pen.tip}</strong>
+                                </div>
+                                <div class="bg-stone-50/80 p-2 rounded border border-stone-200/60">
+                                    <span class="text-[9px] uppercase tracking-wider text-stone-400 block mb-0.5">CHASSI & PESO</span>
+                                    <strong class="text-stone-800 text-[11px] font-semibold">{pen.material}</strong>
+                                </div>
+                                <div class="bg-stone-50/80 p-2 rounded border border-stone-200/60">
+                                    <span class="text-[9px] uppercase tracking-wider text-stone-400 block mb-0.5">MECANISMO</span>
+                                    <strong class="text-stone-800 text-[11px] font-semibold">{pen.mechanism}</strong>
+                                </div>
+                                <div class="bg-stone-50/80 p-2 rounded border border-stone-200/60">
+                                    <span class="text-[9px] uppercase tracking-wider text-stone-400 block mb-0.5">ACABAMENTO</span>
+                                    <strong class="text-stone-800 text-[11px] font-semibold truncate block">{pen.finish}</strong>
+                                </div>
+                            </div>
+
+                            <!-- Cores das Tintas Disponíveis -->
+                            <div class="mb-5">
+                                <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-stone-500 mb-2">
+                                    <span>Tintas Disponíveis:</span>
+                                    <span class="text-stone-400">{pen.inkColors.length} Matizes</span>
+                                </div>
+                                
+                                <div class="flex flex-wrap items-center gap-2">
+                                    {pen.inkColors.map((ink) => (
+                                        <div 
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-100 border border-stone-200 text-[10px] font-mono text-stone-700 shadow-2xs"
+                                            title={`Tinta compatível: ${ink.name}`}
+                                        >
+                                            <span 
+                                                class="w-2.5 h-2.5 rounded-full shrink-0 shadow-xs" 
+                                                style={`background-color: ${ink.hex}; border: 1.5px solid ${ink.border};`}
+                                            ></span>
+                                            <span>{ink.name}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rodapé do Card: Preço Estimado & Botão Avise-me -->
+                        <div class="pt-4 border-t border-stone-200 flex flex-col gap-3">
+                            <div class="flex items-baseline justify-between">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-stone-500">Estimativa</span>
+                                <div class="text-lg font-bold text-stone-900 tracking-tight font-mono">
+                                    {pen.price} <span class="text-[10px] font-normal text-stone-500">/ unid</span>
+                                </div>
+                            </div>
+
+                            <!-- Botão Ficha Técnica (Pág. 3) & Botão Avise-me (Button.astro) -->
+                            <div class="grid grid-cols-2 gap-2">
+                                <a 
+                                    href={`/pagina-3?id=${pen.id}`}
+                                    class="inline-flex items-center justify-center gap-1 px-2.5 py-2 rounded-lg border border-stone-300 bg-white hover:border-stone-900 hover:bg-stone-50 text-[11px] font-mono text-stone-800 transition-all text-center"
+                                >
+                                    <span>Ficha Técnica</span>
+                                    <span class="text-[#FF3300]">→</span>
+                                </a>
+
+                                <Button 
+                                    type="button" 
+                                    variant="beam" 
+                                    size="sm" 
+                                    class="notify-pen-btn justify-center group cursor-pointer text-[11px] px-2.5 py-2"
+                                    data-pen-title={pen.title}
+                                    data-pen-model={pen.model}
+                                    data-pen-tip={pen.tip}
+                                    data-pen-img={pen.image}
+                                >
+                                    <svg class="w-3.5 h-3.5 text-[#FF3300] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                    </svg>
+                                    <span>Avise-me</span>
+                                </Button>
+                            </div>
+                        </div>
+
+                    </article>
+                ))}
+            </div>
+
+            <!-- 3. Chamada de Rodapé da Página -->
+            <div class="mt-16 p-8 rounded-2xl border border-stone-300 bg-white/70 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold text-stone-900">Precisa de calibração personalizada para seu escritório?</h3>
+                    <p class="text-xs sm:text-sm text-stone-600 mt-1 max-w-xl">
+                        Produzimos edições corporativas gravadas a laser para escritórios de arquitetura e estúdios de design industrial.
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                    <a href="/#hero" class="beam-button inline-flex items-center justify-center rounded-lg bg-stone-900 hover:bg-black text-white text-xs font-medium px-5 py-2.5 gap-2 transition-all shadow-sm">
+                        <span>← Voltar ao Modelo Original</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==========================================================================
+             MODAL INTERATIVO "AVISE-ME QUANDO CHEGAR"
+             ========================================================================== -->
+        <div id="notify-modal" class="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+            <div class="relative w-full max-w-md rounded-2xl border border-stone-300 bg-[#FAF9F6] p-6 sm:p-8 shadow-2xl transform scale-95 transition-transform duration-300" id="notify-modal-box">
+                
+                <!-- Botão Fechar -->
+                <button type="button" id="close-modal-btn" class="absolute top-4 right-4 w-8 h-8 rounded-lg border border-stone-300 flex items-center justify-center text-stone-500 hover:text-stone-900 hover:border-stone-900 transition-colors" aria-label="Fechar Modal">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+
+                <!-- Conteúdo do Modal -->
+                <div id="modal-form-content">
+                    <!-- Mini Preview da Caneta no Modal -->
+                    <div class="flex items-center gap-3 p-2.5 mb-4 rounded-xl border border-stone-200 bg-white shadow-2xs">
+                        <div class="w-14 h-11 rounded-lg overflow-hidden bg-stone-100 shrink-0 border border-stone-200">
+                            <img id="modal-pen-img" src="/assets/pens/pen-1.jpg" alt="Preview da Caneta" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="min-w-0">
+                            <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-stone-500">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#FF3300]"></span>
+                                <span id="modal-model-badge">MOD. 00/09</span>
+                            </div>
+                            <h4 class="text-xs sm:text-sm font-bold text-stone-900 truncate" id="modal-pen-title">
+                                Nome da Caneta
+                            </h4>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-stone-600 leading-relaxed mb-6">
+                        Insira seu e-mail para receber acesso prioritário 24 horas antes do lançamento oficial, com condição especial de lote inicial.
+                    </p>
+
+                    <form id="notify-form" class="space-y-4">
+                        <!-- 1. Nome -->
+                        <div>
+                            <label for="user-name" class="block font-mono text-[10px] uppercase tracking-wider text-stone-500 mb-1">
+                                Nome Completo *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="user-name" 
+                                required 
+                                placeholder="Lucas Mendes"
+                                class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 bg-white text-stone-900 text-xs font-mono placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors shadow-2xs"
+                            />
+                        </div>
+
+                        <!-- 2. Número do Telefone -->
+                        <div>
+                            <label for="user-phone" class="block font-mono text-[10px] uppercase tracking-wider text-stone-500 mb-1">
+                                Número do Telefone / WhatsApp *
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="user-phone" 
+                                required 
+                                placeholder="(21) 98765-4321"
+                                maxlength="15"
+                                class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 bg-white text-stone-900 text-xs font-mono placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors shadow-2xs"
+                            />
+                        </div>
+
+                        <!-- 3. E-mail -->
+                        <div>
+                            <label for="user-email" class="block font-mono text-[10px] uppercase tracking-wider text-stone-500 mb-1">
+                                Seu E-mail Profissional *
+                            </label>
+                            <input 
+                                type="email" 
+                                id="user-email" 
+                                required 
+                                placeholder="arquiteto@estudio.com.br"
+                                class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 bg-white text-stone-900 text-xs font-mono placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors shadow-2xs"
+                            />
+                        </div>
+
+                        <Button type="submit" variant="beam" size="md" class="w-full justify-center">
+                            <span>Confirmar Notificação Prioritária</span>
+                            <span class="text-[#FF3300]">✦</span>
+                        </Button>
+                    </form>
+                </div>
+
+                <!-- Estado de Sucesso pós-confirmação -->
+                <div id="modal-success-content" class="hidden text-center py-4">
+                    <div class="w-12 h-12 rounded-full bg-[#00CC66]/15 border border-[#00CC66] text-[#00CC66] flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-stone-900 mb-1">Inscrição Confirmada!</h4>
+                    <p class="text-xs text-stone-600 max-w-xs mx-auto leading-relaxed mb-5">
+                        Você será o primeiro a ser informado sobre a disponibilidade do lote. Obrigado pelo interesse na precisão BNI Nikiti.
+                    </p>
+                    <button type="button" id="success-done-btn" class="beam-button px-5 py-2 rounded-lg bg-stone-900 text-white text-xs font-medium">
+                        Concluir
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script Cliente para o Modal Interativo -->
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('notify-modal');
+            const modalBox = document.getElementById('notify-modal-box');
+            const closeBtn = document.getElementById('close-modal-btn');
+            const formContent = document.getElementById('modal-form-content');
+            const successContent = document.getElementById('modal-success-content');
+            const notifyForm = document.getElementById('notify-form');
+            const nameInput = document.getElementById('user-name');
+            const phoneInput = document.getElementById('user-phone');
+            const emailInput = document.getElementById('user-email');
+            const successDoneBtn = document.getElementById('success-done-btn');
+
+            // Máscara automática de telefone (XX) XXXXX-XXXX
+            if (phoneInput) {
+                phoneInput.addEventListener('input', (e) => {
+                    let v = e.target.value.replace(/\D/g, '');
+                    if (v.length > 11) v = v.slice(0, 11);
+                    if (v.length > 10) {
+                        e.target.value = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+                    } else if (v.length > 6) {
+                        e.target.value = `(${v.slice(0, 2)}) ${v.slice(2, 6)}-${v.slice(6)}`;
+                    } else if (v.length > 2) {
+                        e.target.value = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+                    } else if (v.length > 0) {
+                        e.target.value = `(${v}`;
+                    } else {
+                        e.target.value = '';
+                    }
+                });
+            }
+
+            const modalModelBadge = document.getElementById('modal-model-badge');
+            const modalPenTitle = document.getElementById('modal-pen-title');
+            const modalPenImg = document.getElementById('modal-pen-img');
+
+            const openModal = (title, model, img) => {
+                if (modalPenTitle) modalPenTitle.textContent = title;
+                if (modalModelBadge) modalModelBadge.textContent = model;
+                if (modalPenImg && img) modalPenImg.src = img;
+                
+                formContent.classList.remove('hidden');
+                successContent.classList.add('hidden');
+                if (nameInput) {
+                    nameInput.value = '';
+                    setTimeout(() => nameInput.focus(), 150);
+                }
+                if (phoneInput) phoneInput.value = '';
+                if (emailInput) emailInput.value = '';
+
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100', 'pointer-events-auto');
+                modalBox.classList.remove('scale-95');
+                modalBox.classList.add('scale-100');
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('opacity-100', 'pointer-events-auto');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalBox.classList.remove('scale-100');
+                modalBox.classList.add('scale-95');
+            };
+
+            // Event Listeners nos 9 botões "Avise-me"
+            const notifyButtons = document.querySelectorAll('.notify-pen-btn');
+            notifyButtons.forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const title = btn.getAttribute('data-pen-title') || 'Caneta BNI Nikiti';
+                    const model = btn.getAttribute('data-pen-model') || 'SÉRIE LIMITADA';
+                    const img = btn.getAttribute('data-pen-img') || '/assets/pens/pen-1.jpg';
+                    openModal(title, model, img);
+                });
+            });
+
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (successDoneBtn) successDoneBtn.addEventListener('click', closeModal);
+
+            // Fechar ao clicar no backdrop escuro
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            // Fechar com Escape
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
+                    closeModal();
+                }
+            });
+
+            // Submissão do formulário com feedback visual
+            if (notifyForm) {
+                notifyForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (!emailInput.value) return;
+
+                    formContent.classList.add('hidden');
+                    successContent.classList.remove('hidden');
+                });
+            }
+        });
+    </script>
+</Layout>

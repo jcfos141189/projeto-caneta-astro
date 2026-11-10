@@ -1,0 +1,959 @@
+---
+// Página 3 — Detalhes dos Produtos (BNI Nikiti Pigmentum)
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import { PENS } from '../data/pens';
+
+// Modelo inicial padrão (Nikiti 0.1)
+const defaultPen = PENS[0];
+---
+
+<Layout title="Ficha Técnica & Detalhes — BNI Nikiti" activeItem="detalhes">
+    <main class="min-h-screen pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-16 relative overflow-hidden bg-[#F5F5F0]">
+        
+        <!-- Fundo Sutil de Grid Arquitetural & Gradiente Atmosférico -->
+        <div class="absolute inset-0 bg-grid-architect pointer-events-none opacity-45"></div>
+        <div class="absolute top-10 right-10 w-[600px] h-[600px] bg-gradient-to-bl from-stone-200/50 via-orange-50/20 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1440px] mx-auto relative z-10">
+
+            <!-- 1. Breadcrumbs de Navegação -->
+            <nav class="flex items-center gap-2 font-mono text-[11px] text-stone-500 mb-6 uppercase tracking-wider" aria-label="Breadcrumbs">
+                <a href="/" class="hover:text-stone-900 transition-colors">Início</a>
+                <span class="text-stone-300">/</span>
+                <a href="/pagina-2" class="hover:text-stone-900 transition-colors">Catálogo (Pág. 2)</a>
+                <span class="text-stone-300">/</span>
+                <span class="text-stone-900 font-semibold" id="breadcrumb-model">{defaultPen.model}</span>
+                <span class="text-stone-300">/</span>
+                <span class="text-[#FF3300] font-medium" id="breadcrumb-title">{defaultPen.title}</span>
+            </nav>
+
+            <!-- 2. Barra Superior com Seletor Rápido dos 9 Modelos -->
+            <div class="p-3 sm:p-4 mb-8 sm:mb-12 rounded-2xl border border-stone-300/80 bg-white/80 backdrop-blur-md shadow-2xs">
+                <div class="flex items-center justify-between gap-4 mb-3 pb-2 border-b border-stone-200/70">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#FF3300] animate-pulse"></span>
+                        <span class="font-mono text-[11px] font-semibold text-stone-900 uppercase tracking-widest">
+                            Seletor de Instrumentos // 09 Modelos Disponíveis
+                        </span>
+                    </div>
+                    <a href="/pagina-2" class="inline-flex items-center gap-1.5 text-xs font-mono text-stone-600 hover:text-stone-900 transition-colors">
+                        <span>← Grade Completa</span>
+                    </a>
+                </div>
+
+                <!-- Ribbon com os 9 botões dos modelos -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin" id="model-selector-ribbon">
+                    {PENS.map((pen, index) => (
+                        <button
+                            type="button"
+                            class={`model-select-btn px-3 py-2 rounded-xl border text-left transition-all shrink-0 cursor-pointer font-mono ${index === 0 ? 'bg-stone-900 border-stone-900 text-white shadow-sm active-model' : 'bg-white border-stone-200/80 text-stone-700 hover:border-stone-900 hover:bg-stone-50'}`}
+                            data-pen-id={pen.id}
+                        >
+                            <span class="block text-[10px] tracking-wider uppercase opacity-75">{pen.model}</span>
+                            <span class="block text-xs font-semibold tracking-tight truncate max-w-[130px]">{pen.title.split('—')[0]}</span>
+                            <span class="block text-[9px] text-[#FF3300] tracking-widest mt-0.5">{pen.tip.split(' ')[0]}</span>
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <!-- 3. Palco Principal de Detalhamento do Produto (Grid 2 Colunas) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                
+                <!-- Coluna Esquerda: Galeria & HUD Técnico (7 Colunas em telas grandes) -->
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    
+                    <!-- Moldura Principal da Imagem com Visual Arquitetural -->
+                    <div class="relative w-full aspect-[16/11] rounded-2xl border border-stone-300 bg-white p-3 sm:p-5 shadow-[0_25px_60px_-15px_rgba(28,28,28,0.08)] group overflow-hidden">
+                        
+                        <!-- Cantoneiras Industriais -->
+                        <div class="art-corner-mark -top-2 -left-2 border-t-2 border-l-2 border-stone-900"></div>
+                        <div class="art-corner-mark -top-2 -right-2 border-t-2 border-r-2 border-stone-900"></div>
+                        <div class="art-corner-mark -bottom-2 -left-2 border-b-2 border-l-2 border-stone-900"></div>
+                        <div class="art-corner-mark -bottom-2 -right-2 border-b-2 border-r-2 border-stone-900"></div>
+
+                        <!-- Top HUD Overlay: Escala e Calibração -->
+                        <div class="flex items-center justify-between pb-2 mb-2 border-b border-stone-200/80 font-mono text-[10px] text-stone-500 uppercase tracking-widest">
+                            <span class="flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#00CC66]"></span>
+                                <span>REGISTRO OFICIAL CNC // 1:1 REAL SCALE</span>
+                            </span>
+                            <span id="hud-model-code">MOD. 01/09</span>
+                        </div>
+
+                        <!-- Imagem Principal -->
+                        <div class="relative w-full h-[calc(100%-28px)] rounded-xl overflow-hidden bg-stone-100 flex items-center justify-center">
+                            <img 
+                                id="main-pen-image"
+                                src={defaultPen.image} 
+                                alt={defaultPen.title}
+                                class="w-full h-full object-cover object-center transition-all duration-500 cursor-zoom-in group-hover:scale-105"
+                                loading="eager"
+                            />
+                            
+                            <!-- Gradiente Sutil de Fundo -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 pointer-events-none"></div>
+
+                            <!-- Botão Flutuante de Ampliar Imagem (Lightbox) -->
+                            <button
+                                type="button"
+                                id="open-lightbox-btn"
+                                class="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-stone-900/80 backdrop-blur-md text-white border border-white/20 text-[10px] font-mono uppercase tracking-wider flex items-center gap-1.5 hover:bg-stone-900 transition-colors cursor-pointer"
+                                aria-label="Ampliar foto da caneta"
+                            >
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <polyline points="9 21 3 21 3 15"></polyline>
+                                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                                </svg>
+                                <span>Ampliar 1:1</span>
+                            </button>
+
+                            <!-- Badge Flutuante Inferior com a Ponta e Material -->
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                                <div class="bg-stone-900/85 backdrop-blur-md text-white font-mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border border-white/10 shadow-sm">
+                                    <span class="text-[#FF3300] font-bold">PONTA:</span> <span id="hud-tip">{defaultPen.tip}</span>
+                                </div>
+                                <div class="bg-stone-900/85 backdrop-blur-md text-white font-mono text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-lg border border-white/10 shadow-sm hidden sm:block">
+                                    <span class="text-stone-400">CHASSI:</span> <span id="hud-material">{defaultPen.material.split(' ')[0]}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Miniaturas das 9 Canetas para Troca Rápida de Visualização -->
+                    <div class="grid grid-cols-9 gap-2">
+                        {PENS.map((pen, i) => (
+                            <button 
+                                type="button"
+                                class={`aspect-square rounded-lg border overflow-hidden cursor-pointer transition-all hover:scale-105 pen-thumb-btn ${i === 0 ? 'border-stone-900 ring-2 ring-stone-900/20' : 'border-stone-300 opacity-60 hover:opacity-100'}`}
+                                data-pen-id={pen.id}
+                                title={pen.title}
+                            >
+                                <img src={pen.image} alt={pen.title} class="w-full h-full object-cover" loading="lazy" />
+                            </button>
+                        ))}
+                    </div>
+
+                    <!-- 4 Telemetrias Técnicas em Caixa de Dados Industriais -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
+                        <div class="bg-white/80 p-3.5 rounded-xl border border-stone-200/90 shadow-2xs">
+                            <span class="text-[9px] text-stone-400 uppercase tracking-widest block mb-1">CALIBRE DO TRAÇO</span>
+                            <strong class="text-stone-900 text-[12px] block" id="telemetry-tip">{defaultPen.tip.split(' ')[0]}</strong>
+                            <span class="text-[10px] text-stone-500">Tolerância ±0.001mm</span>
+                        </div>
+                        <div class="bg-white/80 p-3.5 rounded-xl border border-stone-200/90 shadow-2xs">
+                            <span class="text-[9px] text-stone-400 uppercase tracking-widest block mb-1">MASSA TOTAL</span>
+                            <strong class="text-stone-900 text-[12px] block" id="telemetry-weight">{defaultPen.weight.split(' ')[0]}</strong>
+                            <span class="text-[10px] text-stone-500">Equilíbrio Neutro</span>
+                        </div>
+                        <div class="bg-white/80 p-3.5 rounded-xl border border-stone-200/90 shadow-2xs">
+                            <span class="text-[9px] text-stone-400 uppercase tracking-widest block mb-1">CENTRO DE MASSA</span>
+                            <strong class="text-stone-900 text-[12px] block" id="telemetry-balance">{defaultPen.balancePoint.split(' ')[0]}</strong>
+                            <span class="text-[10px] text-stone-500">Da ponteira frontal</span>
+                        </div>
+                        <div class="bg-white/80 p-3.5 rounded-xl border border-stone-200/90 shadow-2xs">
+                            <span class="text-[9px] text-stone-400 uppercase tracking-widest block mb-1">MECANISMO</span>
+                            <strong class="text-stone-900 text-[12px] block truncate" id="telemetry-mechanism">{defaultPen.mechanism.split(' ')[0]}</strong>
+                            <span class="text-[10px] text-stone-500">Hermético</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Coluna Direita: Identidade do Produto, Narrativa & Compra/Avise-me (5 Colunas) -->
+                <div class="lg:col-span-5 flex flex-col justify-between gap-6 bg-white/90 p-6 sm:p-8 rounded-2xl border border-stone-300 shadow-sm">
+                    
+                    <div>
+                        <!-- Header do Produto: Modelo + Status -->
+                        <div class="flex items-center justify-between gap-3 pb-3 mb-4 border-b border-stone-200">
+                            <div class="inline-flex items-center gap-2">
+                                <span class="font-mono text-xs font-bold text-stone-900 tracking-wider" id="pen-model-badge">
+                                    {defaultPen.model}
+                                </span>
+                                <span class="text-stone-300">|</span>
+                                <span class="font-mono text-[10px] text-[#FF3300] uppercase tracking-wider font-semibold" id="pen-category-badge">
+                                    {defaultPen.category}
+                                </span>
+                            </div>
+
+                            <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-stone-600 bg-stone-100 px-2.5 py-1 rounded-md">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#00CC66] animate-pulse" id="pen-status-dot"></span>
+                                <span id="pen-status-text">{defaultPen.status}</span>
+                            </div>
+                        </div>
+
+                        <!-- Série e Título -->
+                        <div class="font-mono text-[11px] text-[#FF3300] uppercase tracking-[0.2em] font-medium mb-1.5" id="pen-series">
+                            {defaultPen.series}
+                        </div>
+                        
+                        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-stone-900 leading-tight mb-4" id="pen-main-title">
+                            {defaultPen.title}
+                        </h1>
+
+                        <!-- Preço Estimado -->
+                        <div class="flex items-baseline gap-3 mb-6 p-4 rounded-xl bg-stone-50 border border-stone-200">
+                            <div>
+                                <span class="font-mono text-[10px] uppercase tracking-widest text-stone-500 block">Preço de Lançamento</span>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-stone-900 font-mono tracking-tight" id="pen-price">
+                                    {defaultPen.price}
+                                    <span class="text-xs font-normal text-stone-500 font-sans">/ unidade completa</span>
+                                </div>
+                            </div>
+                            <div class="ml-auto text-right font-mono text-[10px] text-stone-500">
+                                <span>Condição Exclusiva</span>
+                                <span class="block text-[#00CC66] font-semibold">Prioridade Lote 02</span>
+                            </div>
+                        </div>
+
+                        <!-- Texto Descritivo e Detalhado da Engenharia -->
+                        <div class="space-y-3 mb-6 text-xs sm:text-sm text-stone-600 leading-relaxed">
+                            <p id="pen-description" class="font-medium text-stone-800">
+                                {defaultPen.description}
+                            </p>
+                            <p id="pen-long-description" class="text-stone-600 leading-relaxed">
+                                {defaultPen.longDescription}
+                            </p>
+                        </div>
+
+                        <!-- Seletor Interativo de Paleta de Tintas Compatíveis -->
+                        <div class="mb-6 pt-5 border-t border-stone-200">
+                            <div class="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-stone-600 mb-2.5">
+                                <span class="font-semibold text-stone-900">Tintas Arquivais Compatíveis:</span>
+                                <span id="active-ink-name" class="text-[#FF3300] font-semibold">Nanquim Profundo</span>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2.5 mb-3" id="ink-swatches-container">
+                                {defaultPen.inkColors.map((ink, index) => (
+                                    <button
+                                        type="button"
+                                        class={`ink-swatch-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all cursor-pointer ${index === 0 ? 'bg-stone-900 text-white border-stone-900 ring-2 ring-stone-900/15' : 'bg-white text-stone-700 border-stone-300 hover:border-stone-900'}`}
+                                        data-ink-name={ink.name}
+                                        data-ink-drying={ink.dryingTime || '1.8s'}
+                                        data-ink-lightfast={ink.lightfastness || '100+ anos'}
+                                    >
+                                        <span 
+                                            class="w-3 h-3 rounded-full shrink-0" 
+                                            style={`background-color: ${ink.hex}; border: 1.5px solid ${ink.border};`}
+                                        ></span>
+                                        <span>{ink.name}</span>
+                                    </button>
+                                ))}
+                            </div>
+
+                            <div class="p-2.5 rounded-lg bg-stone-100/80 border border-stone-200/80 font-mono text-[11px] flex items-center justify-between text-stone-600">
+                                <span>Secagem Estimada: <strong class="text-stone-900" id="ink-drying-val">1.6s</strong></span>
+                                <span>Resistência Arquival: <strong class="text-stone-900" id="ink-lightfast-val">100+ anos (ISO)</strong></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bloco de Ações e Botão "Avise-me Quando Chegar" -->
+                    <div class="pt-6 border-t border-stone-200 flex flex-col gap-3.5">
+                        
+                        <!-- BOTÃO AVISE-ME PRINCIPAL (Button.astro com variant="beam" e bordas levemente arredondadas) -->
+                        <Button 
+                            type="button"
+                            id="trigger-notify-cta-btn"
+                            variant="beam"
+                            size="lg"
+                            class="w-full justify-center group cursor-pointer text-sm font-semibold py-3.5"
+                        >
+                            <svg class="w-4 h-4 text-[#FF3300] transition-transform duration-300 group-hover:scale-125" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            <span>Avise-me quando chegar</span>
+                            <span class="text-xs text-white/50 font-normal">✦ Lote Prioritário</span>
+                        </Button>
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <a 
+                                href="/pagina-2"
+                                class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-xs font-mono text-stone-700 transition-colors"
+                            >
+                                <span>← Voltar ao Catálogo</span>
+                            </a>
+                            <button
+                                type="button"
+                                id="share-pen-btn"
+                                class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-xs font-mono text-stone-700 transition-colors cursor-pointer"
+                            >
+                                <svg class="w-3.5 h-3.5 text-stone-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                </svg>
+                                <span id="share-btn-text">Copiar Link Direto</span>
+                            </button>
+                        </div>
+
+                        <!-- 3 Selos de Confiança Arquitetural -->
+                        <div class="grid grid-cols-3 gap-2 pt-3 text-center font-mono text-[10px] text-stone-500 border-t border-stone-100">
+                            <div class="p-1.5">
+                                <span class="block text-stone-900 font-semibold mb-0.5">GARANTIA</span>
+                                <span>Vitalícia CNC</span>
+                            </div>
+                            <div class="p-1.5 border-x border-stone-200">
+                                <span class="block text-stone-900 font-semibold mb-0.5">CALIBRAÇÃO</span>
+                                <span>1ª Gratuita</span>
+                            </div>
+                            <div class="p-1.5">
+                                <span class="block text-stone-900 font-semibold mb-0.5">ESTOJO</span>
+                                <span>Alumínio + EVA</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 4. Dossiê Arquitetural: Ficha Técnica Completa em Tabela Comparativa -->
+            <section class="mt-16 sm:mt-24 pt-12 border-t border-stone-300" aria-labelledby="tech-dossier-heading">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                    <div>
+                        <span class="font-mono text-[10px] text-[#FF3300] uppercase tracking-[0.25em] font-semibold block mb-1">
+                            DOCUMENTAÇÃO DE ENGENHARIA // TOLERÂNCIAS ISO
+                        </span>
+                        <h2 id="tech-dossier-heading" class="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+                            Especificações Técnicas Oficiais
+                        </h2>
+                    </div>
+                    <div class="font-mono text-xs text-stone-500">
+                        Protocolo de Calibração: <strong class="text-stone-800" id="spec-protocol">BNI-7075-REV4</strong>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    
+                    <!-- Bloco 1: Chassi e Metalurgia -->
+                    <div class="p-5 rounded-xl border border-stone-300 bg-white shadow-2xs">
+                        <div class="flex items-center gap-2 font-mono text-xs font-semibold text-stone-900 pb-2 mb-3 border-b border-stone-200">
+                            <span class="text-[#FF3300]">01 /</span>
+                            <span>CHASSI & METALURGIA</span>
+                        </div>
+                        <dl class="space-y-2.5 font-mono text-xs">
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Liga do Corpo:</dt>
+                                <dd class="font-semibold text-stone-800" id="spec-material">{defaultPen.material}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Acabamento Superficial:</dt>
+                                <dd class="font-semibold text-stone-800" id="spec-finish">{defaultPen.finish}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Diâmetro do Corpo:</dt>
+                                <dd class="font-semibold text-stone-800" id="spec-diameter">{defaultPen.specs.diameter}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Comprimento:</dt>
+                                <dd class="font-semibold text-stone-800" id="spec-length">{defaultPen.specs.length}</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Bloco 2: Ponteira & Fluidodinâmica -->
+                    <div class="p-5 rounded-xl border border-stone-300 bg-white shadow-2xs">
+                        <div class="flex items-center gap-2 font-mono text-xs font-semibold text-stone-900 pb-2 mb-3 border-b border-stone-200">
+                            <span class="text-[#FF3300]">02 /</span>
+                            <span>PONTEIRA & FLUXO</span>
+                        </div>
+                        <dl class="space-y-2.5 font-mono text-xs">
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Configuração da Ponta:</dt>
+                                <dd class="font-semibold text-stone-800" id="spec-tip">{defaultPen.tip}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Geometria e Tolerância:</dt>
+                                <dd class="font-semibold text-stone-800 leading-snug" id="spec-tipdetail">{defaultPen.tipDetail}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Consumo de Pigmento:</dt>
+                                <dd class="font-semibold text-stone-800" id="spec-feedrate">{defaultPen.specs.feedRate}</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Bloco 3: Mecânica & Retração -->
+                    <div class="p-5 rounded-xl border border-stone-300 bg-white shadow-2xs">
+                        <div class="flex items-center gap-2 font-mono text-xs font-semibold text-stone-900 pb-2 mb-3 border-b border-stone-200">
+                            <span class="text-[#FF3300]">03 /</span>
+                            <span>MECÂNICA & FECHAMENTO</span>
+                        </div>
+                        <dl class="space-y-2.5 font-mono text-xs">
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Mecanismo de Abertura:</dt>
+                                <dd class="font-semibold text-stone-800" id="spec-mechanism">{defaultPen.mechanism}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Vedação Barométrica:</dt>
+                                <dd class="font-semibold text-stone-800">O-Ring Duplo Viton® FKM</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Balanço Estático:</dt>
+                                <dd class="font-semibold text-stone-800" id="spec-balance">{defaultPen.balancePoint}</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Bloco 4: Compatibilidade & Garantia -->
+                    <div class="p-5 rounded-xl border border-stone-300 bg-white shadow-2xs">
+                        <div class="flex items-center gap-2 font-mono text-xs font-semibold text-stone-900 pb-2 mb-3 border-b border-stone-200">
+                            <span class="text-[#FF3300]">04 /</span>
+                            <span>MÍDIAS & GARANTIA</span>
+                        </div>
+                        <dl class="space-y-2.5 font-mono text-xs">
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Papéis Homologados:</dt>
+                                <dd class="font-semibold text-stone-800 leading-snug" id="spec-papertypes">{defaultPen.specs.paperTypes}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Termos de Cobertura:</dt>
+                                <dd class="font-semibold text-stone-800" id="spec-warranty">{defaultPen.specs.warranty}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] text-stone-400 uppercase">Certificação:</dt>
+                                <dd class="font-semibold text-stone-800">ISO 14145-2 (Arquival)</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- 5. Chamada de Rodapé Navegacional: Descubra Mais Canetas -->
+            <div class="mt-16 p-8 rounded-2xl border border-stone-300 bg-white/70 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div>
+                    <span class="font-mono text-[10px] text-[#FF3300] uppercase tracking-widest block mb-1">LINHA COMPLETA</span>
+                    <h3 class="text-xl font-bold text-stone-900">Quer comparar todos os 9 instrumentos lado a lado?</h3>
+                    <p class="text-xs text-stone-600 mt-1">
+                        Acesse a página de catálogo (Página 2) com filtros e visão geral de todos os modelos de ponta e materiais.
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                    <a href="/pagina-2" class="beam-button inline-flex items-center justify-center rounded-lg bg-stone-900 hover:bg-black text-white text-xs font-medium px-5 py-2.5 gap-2 transition-all shadow-sm">
+                        <span>Ver Catálogo Geral (Página 2) →</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==========================================================================
+             MODAL INTERATIVO "AVISE-ME QUANDO CHEGAR"
+             ========================================================================== -->
+        <div id="notify-modal" class="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+            <div class="relative w-full max-w-lg rounded-2xl border border-stone-300 bg-[#FAF9F6] p-6 sm:p-8 shadow-2xl transform scale-95 transition-transform duration-300" id="notify-modal-box">
+                
+                <!-- Botão Fechar -->
+                <button type="button" id="close-modal-btn" class="absolute top-4 right-4 w-8 h-8 rounded-lg border border-stone-300 flex items-center justify-center text-stone-500 hover:text-stone-900 hover:border-stone-900 transition-colors cursor-pointer" aria-label="Fechar Modal">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+
+                <!-- Conteúdo do Formulário -->
+                <div id="modal-form-content">
+                    
+                    <!-- Mini Preview do Produto no Topo do Modal -->
+                    <div class="flex items-center gap-4 p-3 mb-5 rounded-xl border border-stone-200 bg-white shadow-2xs">
+                        <div class="w-16 h-12 rounded-lg overflow-hidden bg-stone-100 shrink-0 border border-stone-200">
+                            <img id="modal-pen-img" src={defaultPen.image} alt="Caneta Selecionada" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono text-[10px] text-[#FF3300] font-bold" id="modal-model-badge">{defaultPen.model}</span>
+                                <span class="font-mono text-[10px] text-stone-400">●</span>
+                                <span class="font-mono text-[10px] text-stone-500 uppercase tracking-widest" id="modal-pen-tip">{defaultPen.tip.split(' ')[0]}</span>
+                            </div>
+                            <h4 class="text-xs sm:text-sm font-bold text-stone-900 truncate" id="modal-pen-title">{defaultPen.title}</h4>
+                            <span class="text-xs font-mono font-semibold text-stone-700" id="modal-pen-price">{defaultPen.price}</span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-stone-900 tracking-tight mb-1.5">
+                        Inscrição para Notificação de Lote
+                    </h3>
+
+                    <p class="text-xs text-stone-600 leading-relaxed mb-5">
+                        Cadastre seu e-mail profissional para receber acesso prioritário 24 horas antes da abertura do próximo lote de usinagem, com condição exclusiva.
+                    </p>
+
+                    <form id="notify-form" class="space-y-4">
+                        <!-- 1. Nome -->
+                        <div>
+                            <label for="user-name" class="block font-mono text-[10px] uppercase tracking-wider text-stone-500 mb-1">
+                                Nome Completo *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="user-name" 
+                                required 
+                                placeholder="Lucas Mendes"
+                                class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 bg-white text-stone-900 text-xs font-mono placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors shadow-2xs"
+                            />
+                        </div>
+
+                        <!-- 2. Número do Telefone -->
+                        <div>
+                            <label for="user-phone" class="block font-mono text-[10px] uppercase tracking-wider text-stone-500 mb-1">
+                                Número do Telefone / WhatsApp *
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="user-phone" 
+                                required 
+                                placeholder="(21) 98765-4321"
+                                maxlength="15"
+                                class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 bg-white text-stone-900 text-xs font-mono placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors shadow-2xs"
+                            />
+                        </div>
+
+                        <!-- 3. E-mail -->
+                        <div>
+                            <label for="user-email" class="block font-mono text-[10px] uppercase tracking-wider text-stone-500 mb-1">
+                                E-mail Profissional *
+                            </label>
+                            <input 
+                                type="email" 
+                                id="user-email" 
+                                required 
+                                placeholder="arquiteto@estudio.com.br"
+                                class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 bg-white text-stone-900 text-xs font-mono placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors shadow-2xs"
+                            />
+                        </div>
+
+                        <div>
+                            <label for="user-intent" class="block font-mono text-[10px] uppercase tracking-wider text-stone-500 mb-1">
+                                Perfil de Utilização
+                            </label>
+                            <select 
+                                id="user-intent" 
+                                class="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 bg-white text-stone-900 text-xs font-mono focus:outline-none focus:border-stone-900 transition-colors shadow-2xs"
+                            >
+                                <option value="croqui">Uso Pessoal // Prancheta & Croquis Rápidos</option>
+                                <option value="executivo">Desenho Técnico & Pranchas Executivas</option>
+                                <option value="escritorio">Escritório de Arquitetura // Pedido Corporativo</option>
+                                <option value="colecao">Coleção & Design de Instrumentos</option>
+                            </select>
+                        </div>
+
+                        <!-- Botão com Button.astro -->
+                        <Button type="submit" variant="beam" size="md" class="w-full justify-center text-xs font-semibold py-3 cursor-pointer">
+                            <span>Confirmar Notificação Prioritária</span>
+                            <span class="text-[#FF3300]">✦</span>
+                        </Button>
+                    </form>
+
+                </div>
+
+                <!-- Estado de Confirmação com Sucesso -->
+                <div id="modal-success-content" class="hidden text-center py-6">
+                    <div class="w-14 h-14 rounded-full bg-[#00CC66]/15 border border-[#00CC66] text-[#00CC66] flex items-center justify-center mx-auto mb-3.5">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-stone-900 mb-1">Inscrição Confirmada!</h4>
+                    <p class="text-xs text-stone-600 max-w-sm mx-auto leading-relaxed mb-6">
+                        Você receberá um e-mail com sua credencial de prioridade para o modelo selecionado. Agradecemos pelo compromisso com o rigor arquitetural.
+                    </p>
+                    <button type="button" id="success-done-btn" class="beam-button px-6 py-2.5 rounded-lg bg-stone-900 text-white text-xs font-medium cursor-pointer">
+                        Concluir e Voltar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ==========================================================================
+             LIGHTBOX PARA VISUALIZAÇÃO AMPLIADA 1:1 DA CANETA
+             ========================================================================== -->
+        <div id="lightbox-modal" class="fixed inset-0 z-[160] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+            <button type="button" id="close-lightbox-btn" class="absolute top-6 right-6 w-10 h-10 rounded-full border border-white/20 bg-black/60 text-white flex items-center justify-center hover:bg-white hover:text-stone-900 transition-colors cursor-pointer" aria-label="Fechar visualização">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="max-w-4xl max-h-[85vh] p-2 flex flex-col items-center">
+                <img id="lightbox-img" src={defaultPen.image} alt="Ampliação da caneta" class="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl" />
+                <div class="mt-4 font-mono text-xs text-stone-300 text-center tracking-wider" id="lightbox-caption">
+                    {defaultPen.title} — {defaultPen.tip}
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script Cliente para Alternância Dinâmica de Modelos, Tintas e Modais -->
+    <script is:inline define:vars={{ pensData: PENS }}>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mapeamento dos dados
+            const pens = pensData;
+            let currentPen = pens[0];
+
+            // Elementos DOM
+            const mainImg = document.getElementById('main-pen-image');
+            const hudModelCode = document.getElementById('hud-model-code');
+            const hudTip = document.getElementById('hud-tip');
+            const hudMaterial = document.getElementById('hud-material');
+            const penModelBadge = document.getElementById('pen-model-badge');
+            const penCategoryBadge = document.getElementById('pen-category-badge');
+            const penStatusText = document.getElementById('pen-status-text');
+            const penSeries = document.getElementById('pen-series');
+            const penMainTitle = document.getElementById('pen-main-title');
+            const penPrice = document.getElementById('pen-price');
+            const penDescription = document.getElementById('pen-description');
+            const penLongDescription = document.getElementById('pen-long-description');
+            
+            // Breadcrumbs
+            const breadcrumbModel = document.getElementById('breadcrumb-model');
+            const breadcrumbTitle = document.getElementById('breadcrumb-title');
+
+            // Telemetrias
+            const telemetryTip = document.getElementById('telemetry-tip');
+            const telemetryWeight = document.getElementById('telemetry-weight');
+            const telemetryBalance = document.getElementById('telemetry-balance');
+            const telemetryMechanism = document.getElementById('telemetry-mechanism');
+
+            // Especificações da Tabela
+            const specMaterial = document.getElementById('spec-material');
+            const specFinish = document.getElementById('spec-finish');
+            const specDiameter = document.getElementById('spec-diameter');
+            const specLength = document.getElementById('spec-length');
+            const specTip = document.getElementById('spec-tip');
+            const specTipDetail = document.getElementById('spec-tipdetail');
+            const specFeedRate = document.getElementById('spec-feedrate');
+            const specMechanism = document.getElementById('spec-mechanism');
+            const specBalance = document.getElementById('spec-balance');
+            const specPaperTypes = document.getElementById('spec-papertypes');
+            const specWarranty = document.getElementById('spec-warranty');
+
+            // Elementos de Tinta
+            const activeInkName = document.getElementById('active-ink-name');
+            const inkDryingVal = document.getElementById('ink-drying-val');
+            const inkLightfastVal = document.getElementById('ink-lightfast-val');
+            const inkContainer = document.getElementById('ink-swatches-container');
+
+            // Modais
+            const notifyModal = document.getElementById('notify-modal');
+            const notifyModalBox = document.getElementById('notify-modal-box');
+            const triggerCtaBtn = document.getElementById('trigger-notify-cta-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const modalFormContent = document.getElementById('modal-form-content');
+            const modalSuccessContent = document.getElementById('modal-success-content');
+            const notifyForm = document.getElementById('notify-form');
+            const successDoneBtn = document.getElementById('success-done-btn');
+            
+            // Mini Preview do Modal
+            const modalPenImg = document.getElementById('modal-pen-img');
+            const modalModelBadge = document.getElementById('modal-model-badge');
+            const modalPenTip = document.getElementById('modal-pen-tip');
+            const modalPenTitle = document.getElementById('modal-pen-title');
+            const modalPenPrice = document.getElementById('modal-pen-price');
+
+            // Lightbox
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const openLightboxBtn = document.getElementById('open-lightbox-btn');
+            const closeLightboxBtn = document.getElementById('close-lightbox-btn');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            // Função para Atualizar a View com o Modelo Selecionado
+            function updatePenView(pen) {
+                currentPen = pen;
+
+                // Transição visual suave na imagem
+                if (mainImg) {
+                    mainImg.style.opacity = '0';
+                    setTimeout(() => {
+                        mainImg.src = pen.image;
+                        mainImg.alt = pen.title;
+                        mainImg.style.opacity = '1';
+                    }, 150);
+                }
+
+                // HUD & Badges
+                if (hudModelCode) hudModelCode.textContent = pen.model;
+                if (hudTip) hudTip.textContent = pen.tip;
+                if (hudMaterial) hudMaterial.textContent = pen.material.split(' ')[0];
+                if (penModelBadge) penModelBadge.textContent = pen.model;
+                if (penCategoryBadge) penCategoryBadge.textContent = pen.category;
+                if (penStatusText) penStatusText.textContent = pen.status;
+                if (penSeries) penSeries.textContent = pen.series;
+                if (penMainTitle) penMainTitle.textContent = pen.title;
+                if (penPrice) {
+                    penPrice.innerHTML = `${pen.price} <span class="text-xs font-normal text-stone-500 font-sans">/ unidade completa</span>`;
+                }
+                if (penDescription) penDescription.textContent = pen.description;
+                if (penLongDescription) penLongDescription.textContent = pen.longDescription;
+
+                // Breadcrumbs
+                if (breadcrumbModel) breadcrumbModel.textContent = pen.model;
+                if (breadcrumbTitle) breadcrumbTitle.textContent = pen.title.split('—')[0];
+
+                // Telemetrias
+                if (telemetryTip) telemetryTip.textContent = pen.tip.split(' ')[0];
+                if (telemetryWeight) telemetryWeight.textContent = pen.weight.split(' ')[0];
+                if (telemetryBalance) telemetryBalance.textContent = pen.balancePoint.split(' ')[0];
+                if (telemetryMechanism) telemetryMechanism.textContent = pen.mechanism.split(' ')[0];
+
+                // Tabela de Especificações
+                if (specMaterial) specMaterial.textContent = pen.material;
+                if (specFinish) specFinish.textContent = pen.finish;
+                if (specDiameter) specDiameter.textContent = pen.specs.diameter;
+                if (specLength) specLength.textContent = pen.specs.length;
+                if (specTip) specTip.textContent = pen.tip;
+                if (specTipDetail) specTipDetail.textContent = pen.tipDetail;
+                if (specFeedRate) specFeedRate.textContent = pen.specs.feedRate;
+                if (specMechanism) specMechanism.textContent = pen.mechanism;
+                if (specBalance) specBalance.textContent = pen.balancePoint;
+                if (specPaperTypes) specPaperTypes.textContent = pen.specs.paperTypes;
+                if (specWarranty) specWarranty.textContent = pen.specs.warranty;
+
+                // Recriar Botões de Swatches de Tinta
+                if (inkContainer && pen.inkColors) {
+                    inkContainer.innerHTML = '';
+                    pen.inkColors.forEach((ink, idx) => {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = `ink-swatch-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all cursor-pointer ${idx === 0 ? 'bg-stone-900 text-white border-stone-900 ring-2 ring-stone-900/15' : 'bg-white text-stone-700 border-stone-300 hover:border-stone-900'}`;
+                        btn.dataset.inkName = ink.name;
+                        btn.dataset.inkDrying = ink.dryingTime || '1.8s';
+                        btn.dataset.inkLightfast = ink.lightfastness || '100+ anos';
+                        btn.innerHTML = `
+                            <span class="w-3 h-3 rounded-full shrink-0" style="background-color: ${ink.hex}; border: 1.5px solid ${ink.border};"></span>
+                            <span>${ink.name}</span>
+                        `;
+                        btn.addEventListener('click', () => {
+                            document.querySelectorAll('.ink-swatch-btn').forEach(b => {
+                                b.className = 'ink-swatch-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all cursor-pointer bg-white text-stone-700 border-stone-300 hover:border-stone-900';
+                            });
+                            btn.className = 'ink-swatch-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all cursor-pointer bg-stone-900 text-white border-stone-900 ring-2 ring-stone-900/15';
+                            if (activeInkName) activeInkName.textContent = ink.name;
+                            if (inkDryingVal) inkDryingVal.textContent = ink.dryingTime || '1.8s';
+                            if (inkLightfastVal) inkLightfastVal.textContent = ink.lightfastness || '100+ anos';
+                        });
+                        inkContainer.appendChild(btn);
+                    });
+
+                    // Resetar label da primeira tinta
+                    if (pen.inkColors[0]) {
+                        if (activeInkName) activeInkName.textContent = pen.inkColors[0].name;
+                        if (inkDryingVal) inkDryingVal.textContent = pen.inkColors[0].dryingTime || '1.6s';
+                        if (inkLightfastVal) inkLightfastVal.textContent = pen.inkColors[0].lightfastness || '100+ anos';
+                    }
+                }
+
+                // Atualizar Estado Visual do Ribbon Superior
+                document.querySelectorAll('.model-select-btn').forEach(btn => {
+                    const isSelected = btn.dataset.penId === pen.id;
+                    if (isSelected) {
+                        btn.className = 'model-select-btn px-3 py-2 rounded-xl border text-left transition-all shrink-0 cursor-pointer font-mono bg-stone-900 border-stone-900 text-white shadow-sm active-model';
+                    } else {
+                        btn.className = 'model-select-btn px-3 py-2 rounded-xl border text-left transition-all shrink-0 cursor-pointer font-mono bg-white border-stone-200/80 text-stone-700 hover:border-stone-900 hover:bg-stone-50';
+                    }
+                });
+
+                // Atualizar Miniaturas
+                document.querySelectorAll('.pen-thumb-btn').forEach(thumb => {
+                    const isSelected = thumb.dataset.penId === pen.id;
+                    if (isSelected) {
+                        thumb.className = 'aspect-square rounded-lg border overflow-hidden cursor-pointer transition-all hover:scale-105 pen-thumb-btn border-stone-900 ring-2 ring-stone-900/20 opacity-100';
+                    } else {
+                        thumb.className = 'aspect-square rounded-lg border overflow-hidden cursor-pointer transition-all hover:scale-105 pen-thumb-btn border-stone-300 opacity-60 hover:opacity-100';
+                    }
+                });
+
+                // Atualizar Lightbox info
+                if (lightboxImg) lightboxImg.src = pen.image;
+                if (lightboxCaption) lightboxCaption.textContent = `${pen.title} — ${pen.tip}`;
+            }
+
+            // Ouvinte nos Botões do Ribbon Superior
+            document.querySelectorAll('.model-select-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const penId = btn.dataset.penId;
+                    const found = pens.find(p => p.id === penId);
+                    if (found) {
+                        updatePenView(found);
+                        // Atualizar query string sem recarregar
+                        const newUrl = new URL(window.location);
+                        newUrl.searchParams.set('id', found.id);
+                        window.history.replaceState({}, '', newUrl);
+                    }
+                });
+            });
+
+            // Ouvinte nas Miniaturas
+            document.querySelectorAll('.pen-thumb-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const penId = btn.dataset.penId;
+                    const found = pens.find(p => p.id === penId);
+                    if (found) {
+                        updatePenView(found);
+                        const newUrl = new URL(window.location);
+                        newUrl.searchParams.set('id', found.id);
+                        window.history.replaceState({}, '', newUrl);
+                    }
+                });
+            });
+
+            // Verificar se veio parâmetro ?id= na URL ou Hash
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialId = urlParams.get('id') || window.location.hash.replace('#', '');
+            if (initialId) {
+                const requestedPen = pens.find(p => p.id === initialId);
+                if (requestedPen) {
+                    updatePenView(requestedPen);
+                }
+            }
+
+            // Gerenciamento do Modal "Avise-me Quando Chegar"
+            const userNameInput = document.getElementById('user-name');
+            const userPhoneInput = document.getElementById('user-phone');
+            const userEmailInput = document.getElementById('user-email');
+
+            // Máscara automática para Telefone / WhatsApp
+            if (userPhoneInput) {
+                userPhoneInput.addEventListener('input', (e) => {
+                    let v = e.target.value.replace(/\D/g, '');
+                    if (v.length > 11) v = v.slice(0, 11);
+                    if (v.length > 10) {
+                        e.target.value = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+                    } else if (v.length > 6) {
+                        e.target.value = `(${v.slice(0, 2)}) ${v.slice(2, 6)}-${v.slice(6)}`;
+                    } else if (v.length > 2) {
+                        e.target.value = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+                    } else if (v.length > 0) {
+                        e.target.value = `(${v}`;
+                    } else {
+                        e.target.value = '';
+                    }
+                });
+            }
+
+            const openModal = () => {
+                if (modalPenImg) modalPenImg.src = currentPen.image;
+                if (modalModelBadge) modalModelBadge.textContent = currentPen.model;
+                if (modalPenTip) modalPenTip.textContent = currentPen.tip.split(' ')[0];
+                if (modalPenTitle) modalPenTitle.textContent = currentPen.title;
+                if (modalPenPrice) modalPenPrice.textContent = currentPen.price;
+
+                if (modalFormContent) modalFormContent.classList.remove('hidden');
+                if (modalSuccessContent) modalSuccessContent.classList.add('hidden');
+
+                if (userNameInput) {
+                    userNameInput.value = '';
+                    setTimeout(() => userNameInput.focus(), 150);
+                }
+                if (userPhoneInput) userPhoneInput.value = '';
+                if (userEmailInput) userEmailInput.value = '';
+
+                if (notifyModal) {
+                    notifyModal.classList.remove('opacity-0', 'pointer-events-none');
+                    notifyModal.classList.add('opacity-100');
+                }
+                if (notifyModalBox) {
+                    notifyModalBox.classList.remove('scale-95');
+                    notifyModalBox.classList.add('scale-100');
+                }
+            };
+
+            const closeModal = () => {
+                if (notifyModal) {
+                    notifyModal.classList.remove('opacity-100');
+                    notifyModal.classList.add('opacity-0', 'pointer-events-none');
+                }
+                if (notifyModalBox) {
+                    notifyModalBox.classList.remove('scale-100');
+                    notifyModalBox.classList.add('scale-95');
+                }
+            };
+
+            if (triggerCtaBtn) triggerCtaBtn.addEventListener('click', openModal);
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (successDoneBtn) successDoneBtn.addEventListener('click', closeModal);
+
+            if (notifyModal) {
+                notifyModal.addEventListener('click', (e) => {
+                    if (e.target === notifyModal) closeModal();
+                });
+            }
+
+            if (notifyForm) {
+                notifyForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (modalFormContent) modalFormContent.classList.add('hidden');
+                    if (modalSuccessContent) modalSuccessContent.classList.remove('hidden');
+                });
+            }
+
+            // Gerenciamento do Lightbox
+            const openLightbox = () => {
+                if (lightboxImg) lightboxImg.src = currentPen.image;
+                if (lightboxCaption) lightboxCaption.textContent = `${currentPen.title} — ${currentPen.tip}`;
+                if (lightboxModal) {
+                    lightboxModal.classList.remove('opacity-0', 'pointer-events-none');
+                    lightboxModal.classList.add('opacity-100');
+                }
+            };
+
+            const closeLightbox = () => {
+                if (lightboxModal) {
+                    lightboxModal.classList.remove('opacity-100');
+                    lightboxModal.classList.add('opacity-0', 'pointer-events-none');
+                }
+            };
+
+            if (openLightboxBtn) openLightboxBtn.addEventListener('click', openLightbox);
+            if (mainImg) mainImg.addEventListener('click', openLightbox);
+            if (closeLightboxBtn) closeLightboxBtn.addEventListener('click', closeLightbox);
+            if (lightboxModal) {
+                lightboxModal.addEventListener('click', (e) => {
+                    if (e.target === lightboxModal) closeLightbox();
+                });
+            }
+
+            // Tecla ESC fecha modais
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                    closeLightbox();
+                }
+            });
+
+            // Compartilhar / Copiar Link Direto
+            const shareBtn = document.getElementById('share-pen-btn');
+            const shareText = document.getElementById('share-btn-text');
+            if (shareBtn && shareText) {
+                shareBtn.addEventListener('click', async () => {
+                    const currentUrl = window.location.href;
+                    try {
+                        await navigator.clipboard.writeText(currentUrl);
+                        shareText.textContent = 'Link Copiado!';
+                        setTimeout(() => {
+                            shareText.textContent = 'Copiar Link Direto';
+                        }, 2500);
+                    } catch (err) {
+                        shareText.textContent = 'Link: /pagina-3?id=' + currentPen.id;
+                    }
+                });
+            }
+        });
+    </script>
+</Layout>
+

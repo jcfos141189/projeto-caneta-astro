@@ -1,0 +1,339 @@
+---
+// InkColorsSection Component — BNI Nikiti Pigmentum 0.1
+// Nova dobra: Paleta de Tintas & Marquee Infinito Cursivo com fundo 100% Preto
+---
+
+<section id="tintas" class="relative z-20 bg-black text-white py-14 sm:py-18 md:py-22 overflow-hidden border-t border-stone-800">
+
+    <!-- Fundo 100% Preto com Textura de Grid Arquitetural Sutil & Brilho Atmosférico -->
+    <div class="absolute inset-0 bg-[#000000] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-40"></div>
+    
+    <!-- Halos de iluminação dramática nas bordas -->
+    <div class="absolute -top-32 left-1/4 w-[500px] h-[300px] bg-gradient-to-b from-stone-900/60 to-transparent rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute -bottom-32 right-1/4 w-[500px] h-[300px] bg-gradient-to-t from-[#FF3300]/10 to-transparent rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+
+        <!-- 1. Cabeçalho Editorial Compacto da Dobra -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
+            <div>
+                <!-- Eyebrow Tag -->
+                <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full border border-stone-800 bg-stone-950/80 backdrop-blur-md mb-3 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF3300] animate-pulse"></span>
+                    <span class="font-mono text-[10px] uppercase tracking-[0.24em] text-stone-300">04 // Coleção Pigmentum — Paleta de Nanquins</span>
+                </div>
+
+                <!-- Título em Destaque com Tipografia Mista (Display + Cursiva) -->
+                <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+                    A Alma do Traço: <br />
+                    <span class="font-cursive font-normal text-3xl sm:text-5xl md:text-6xl text-stone-200 tracking-wide">
+                        Nanquins &amp; Pigmentos Raros
+                    </span>
+                </h2>
+            </div>
+
+            <!-- Texto Editorial de Apoio -->
+            <div class="max-w-md">
+                <p class="text-xs sm:text-sm text-stone-400 font-normal leading-relaxed">
+                    Nanopartículas minerais puras e pH balanceado. Cada tonalidade flui pela microponta 0.10mm sem cristalização, secando em 0,4 segundos com resistência à água e à luz por séculos.
+                </p>
+                <div class="mt-3 flex flex-wrap items-center gap-3 font-mono text-[10px] uppercase tracking-wider text-stone-500">
+                    <span class="text-stone-300">✦ ISO 14145-2</span>
+                    <span>•</span>
+                    <span class="text-stone-300">✦ DENSIDADE 1.85</span>
+                    <span>•</span>
+                    <span class="text-stone-300">✦ IMPERMEÁVEL</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 2. MARQUEE INFINITO CURSIVO — LINHA ÚNICA COM VELOCIDADE SUAVE E TRANQUILA -->
+    <div class="relative py-4 sm:py-6 border-y border-stone-900 bg-black/95 backdrop-blur-sm overflow-hidden group">
+        <div class="marquee-container" title="Passe o cursor para pausar o fluxo">
+            
+            <!-- Conteúdo Principal da Linha Única -->
+            <div class="marquee-content-slow gap-12 sm:gap-16 pr-12 sm:pr-16">
+                <!-- Nanquim Profundo -->
+                <div class="inline-flex items-center gap-3.5 text-white hover:text-[#FF3300] transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-stone-900 border-2 border-stone-400 shadow-[0_0_12px_rgba(255,255,255,0.4)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Nanquim Profundo</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Índigo Meia-Noite -->
+                <div class="inline-flex items-center gap-3.5 text-blue-100 hover:text-blue-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#1A365D] border-2 border-blue-400 shadow-[0_0_14px_rgba(59,130,246,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Índigo Meia-Noite</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Sépia Arquival -->
+                <div class="inline-flex items-center gap-3.5 text-amber-100 hover:text-amber-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#78350F] border-2 border-amber-400 shadow-[0_0_14px_rgba(245,158,11,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Sépia Arquival</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Carmim Escarlate -->
+                <div class="inline-flex items-center gap-3.5 text-red-100 hover:text-red-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#991B1B] border-2 border-red-500 shadow-[0_0_14px_rgba(239,68,68,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Carmim Escarlate</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Preto Obsidiana -->
+                <div class="inline-flex items-center gap-3.5 text-stone-100 hover:text-stone-300 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-black border-2 border-white shadow-[0_0_14px_rgba(255,255,255,0.8)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Preto Obsidiana</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Verde Musgo Imperial -->
+                <div class="inline-flex items-center gap-3.5 text-emerald-100 hover:text-emerald-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#064E3B] border-2 border-emerald-400 shadow-[0_0_14px_rgba(16,185,129,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Verde Musgo Imperial</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Âmbar Queimado -->
+                <div class="inline-flex items-center gap-3.5 text-amber-200 hover:text-amber-500 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#B45309] border-2 border-amber-500 shadow-[0_0_14px_rgba(245,158,11,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Âmbar Queimado</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Azul Cobalto Profundo -->
+                <div class="inline-flex items-center gap-3.5 text-indigo-100 hover:text-indigo-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#312E81] border-2 border-indigo-400 shadow-[0_0_14px_rgba(99,102,241,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Azul Cobalto Profundo</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Terracota Mineral -->
+                <div class="inline-flex items-center gap-3.5 text-orange-100 hover:text-orange-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#9A3412] border-2 border-orange-400 shadow-[0_0_14px_rgba(249,115,22,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Terracota Mineral</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Grafite Carbono -->
+                <div class="inline-flex items-center gap-3.5 text-stone-200 hover:text-stone-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#374151] border-2 border-stone-400 shadow-[0_0_12px_rgba(156,163,175,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Grafite Carbono</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Vinho Borgonha -->
+                <div class="inline-flex items-center gap-3.5 text-rose-100 hover:text-rose-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#881337] border-2 border-rose-400 shadow-[0_0_14px_rgba(244,63,94,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Vinho Borgonha</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Azul da Prússia -->
+                <div class="inline-flex items-center gap-3.5 text-cyan-100 hover:text-cyan-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#0C4A6E] border-2 border-cyan-400 shadow-[0_0_14px_rgba(6,182,212,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Azul da Prússia</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Branco Caligrafia -->
+                <div class="inline-flex items-center gap-3.5 text-white hover:text-stone-200 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-white border-2 border-stone-300 shadow-[0_0_16px_rgba(255,255,255,0.9)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Branco Caligrafia</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+            </div>
+
+            <!-- Cópia duplicada para loop contínuo e sem emendas -->
+            <div class="marquee-content-slow gap-12 sm:gap-16 pr-12 sm:pr-16" aria-hidden="true">
+                <!-- Nanquim Profundo -->
+                <div class="inline-flex items-center gap-3.5 text-white hover:text-[#FF3300] transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-stone-900 border-2 border-stone-400 shadow-[0_0_12px_rgba(255,255,255,0.4)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Nanquim Profundo</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Índigo Meia-Noite -->
+                <div class="inline-flex items-center gap-3.5 text-blue-100 hover:text-blue-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#1A365D] border-2 border-blue-400 shadow-[0_0_14px_rgba(59,130,246,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Índigo Meia-Noite</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Sépia Arquival -->
+                <div class="inline-flex items-center gap-3.5 text-amber-100 hover:text-amber-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#78350F] border-2 border-amber-400 shadow-[0_0_14px_rgba(245,158,11,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Sépia Arquival</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Carmim Escarlate -->
+                <div class="inline-flex items-center gap-3.5 text-red-100 hover:text-red-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#991B1B] border-2 border-red-500 shadow-[0_0_14px_rgba(239,68,68,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Carmim Escarlate</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Preto Obsidiana -->
+                <div class="inline-flex items-center gap-3.5 text-stone-100 hover:text-stone-300 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-black border-2 border-white shadow-[0_0_14px_rgba(255,255,255,0.8)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Preto Obsidiana</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Verde Musgo Imperial -->
+                <div class="inline-flex items-center gap-3.5 text-emerald-100 hover:text-emerald-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#064E3B] border-2 border-emerald-400 shadow-[0_0_14px_rgba(16,185,129,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Verde Musgo Imperial</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Âmbar Queimado -->
+                <div class="inline-flex items-center gap-3.5 text-amber-200 hover:text-amber-500 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#B45309] border-2 border-amber-500 shadow-[0_0_14px_rgba(245,158,11,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Âmbar Queimado</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Azul Cobalto Profundo -->
+                <div class="inline-flex items-center gap-3.5 text-indigo-100 hover:text-indigo-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#312E81] border-2 border-indigo-400 shadow-[0_0_14px_rgba(99,102,241,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Azul Cobalto Profundo</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Terracota Mineral -->
+                <div class="inline-flex items-center gap-3.5 text-orange-100 hover:text-orange-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#9A3412] border-2 border-orange-400 shadow-[0_0_14px_rgba(249,115,22,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Terracota Mineral</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Grafite Carbono -->
+                <div class="inline-flex items-center gap-3.5 text-stone-200 hover:text-stone-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#374151] border-2 border-stone-400 shadow-[0_0_12px_rgba(156,163,175,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Grafite Carbono</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Vinho Borgonha -->
+                <div class="inline-flex items-center gap-3.5 text-rose-100 hover:text-rose-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#881337] border-2 border-rose-400 shadow-[0_0_14px_rgba(244,63,94,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Vinho Borgonha</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Azul da Prússia -->
+                <div class="inline-flex items-center gap-3.5 text-cyan-100 hover:text-cyan-400 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-[#0C4A6E] border-2 border-cyan-400 shadow-[0_0_14px_rgba(6,182,212,0.6)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Azul da Prússia</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+
+                <!-- Branco Caligrafia -->
+                <div class="inline-flex items-center gap-3.5 text-white hover:text-stone-200 transition-colors duration-300 cursor-default">
+                    <span class="w-3 h-3 rounded-full bg-white border-2 border-stone-300 shadow-[0_0_16px_rgba(255,255,255,0.9)]"></span>
+                    <span class="font-cursive text-4xl sm:text-6xl md:text-7xl tracking-wide whitespace-nowrap">Branco Caligrafia</span>
+                </div>
+                <span class="text-stone-700 text-lg font-mono">✦</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3. Barra Inferior de Amostras Minerais (Pedestal Arquitetural Compacto) -->
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 pt-10 md:pt-12 relative z-10">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-stone-800/80 text-stone-400">
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                Amostragem Espectral // Cápsulas de Vidro Borossilicato 30ml
+            </span>
+            <span class="font-mono text-[9px] uppercase tracking-widest text-stone-500">
+                Fórmula Base: Óxido Mineral Microfiltrado
+            </span>
+        </div>
+
+        <!-- Grade de Cartões de Amostra das Cores -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5 sm:gap-3 mt-4">
+            
+            <div class="p-2.5 sm:p-3 rounded-lg border border-stone-800/80 bg-stone-950/60 backdrop-blur-sm flex items-center gap-2.5 hover:border-stone-600 transition-colors">
+                <span class="w-4 h-4 rounded-full bg-[#0A0A0A] border border-stone-500 shadow-inner shrink-0"></span>
+                <div class="truncate">
+                    <div class="font-mono text-[11px] text-white font-medium truncate">Nanquim 01</div>
+                    <div class="font-mono text-[9px] text-stone-500">#0A0A0A</div>
+                </div>
+            </div>
+
+            <div class="p-2.5 sm:p-3 rounded-lg border border-stone-800/80 bg-stone-950/60 backdrop-blur-sm flex items-center gap-2.5 hover:border-stone-600 transition-colors">
+                <span class="w-4 h-4 rounded-full bg-[#1A365D] border border-blue-500/60 shadow-inner shrink-0"></span>
+                <div class="truncate">
+                    <div class="font-mono text-[11px] text-white font-medium truncate">Índigo 02</div>
+                    <div class="font-mono text-[9px] text-stone-500">#1A365D</div>
+                </div>
+            </div>
+
+            <div class="p-2.5 sm:p-3 rounded-lg border border-stone-800/80 bg-stone-950/60 backdrop-blur-sm flex items-center gap-2.5 hover:border-stone-600 transition-colors">
+                <span class="w-4 h-4 rounded-full bg-[#78350F] border border-amber-600/60 shadow-inner shrink-0"></span>
+                <div class="truncate">
+                    <div class="font-mono text-[11px] text-white font-medium truncate">Sépia 03</div>
+                    <div class="font-mono text-[9px] text-stone-500">#78350F</div>
+                </div>
+            </div>
+
+            <div class="p-2.5 sm:p-3 rounded-lg border border-stone-800/80 bg-stone-950/60 backdrop-blur-sm flex items-center gap-2.5 hover:border-stone-600 transition-colors">
+                <span class="w-4 h-4 rounded-full bg-[#991B1B] border border-red-500/60 shadow-inner shrink-0"></span>
+                <div class="truncate">
+                    <div class="font-mono text-[11px] text-white font-medium truncate">Carmim 04</div>
+                    <div class="font-mono text-[9px] text-stone-500">#991B1B</div>
+                </div>
+            </div>
+
+            <div class="p-2.5 sm:p-3 rounded-lg border border-stone-800/80 bg-stone-950/60 backdrop-blur-sm flex items-center gap-2.5 hover:border-stone-600 transition-colors">
+                <span class="w-4 h-4 rounded-full bg-[#064E3B] border border-emerald-500/60 shadow-inner shrink-0"></span>
+                <div class="truncate">
+                    <div class="font-mono text-[11px] text-white font-medium truncate">Musgo 05</div>
+                    <div class="font-mono text-[9px] text-stone-500">#064E3B</div>
+                </div>
+            </div>
+
+            <div class="p-2.5 sm:p-3 rounded-lg border border-stone-800/80 bg-stone-950/60 backdrop-blur-sm flex items-center gap-2.5 hover:border-stone-600 transition-colors">
+                <span class="w-4 h-4 rounded-full bg-[#B45309] border border-amber-500/60 shadow-inner shrink-0"></span>
+                <div class="truncate">
+                    <div class="font-mono text-[11px] text-white font-medium truncate">Âmbar 06</div>
+                    <div class="font-mono text-[9px] text-stone-500">#B45309</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Citação de Fechamento da Dobra -->
+        <div class="mt-8 pt-6 border-t border-stone-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+            <span class="font-serif italic text-stone-400 text-xs sm:text-sm">
+                “A tinta é o registro definitivo do raciocínio arquitetônico — o pensamento que se torna matéria permanente.”
+            </span>
+            <span class="font-mono text-[9px] uppercase tracking-widest text-[#FF3300]">
+                ● Disponível em Frascos de 30ml e Cartuchos Herméticos
+            </span>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    /* Marquee com velocidade suave, tranquila e relaxada (75s para ciclo completo) */
+    .marquee-content-slow {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        min-width: 100%;
+        animation: scrollMarquee 75s linear infinite;
+    }
+
+    .marquee-container:hover .marquee-content-slow {
+        animation-play-state: paused;
+    }
+</style>

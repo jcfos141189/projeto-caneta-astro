@@ -1,0 +1,281 @@
+---
+// Studio Section Component — BNI Nikiti Pigmentum 0.1
+import Button from './Button.astro';
+---
+
+<section id="studio" class="relative z-20 bg-white py-24 md:py-36 px-6 md:px-12 lg:px-16 overflow-hidden scroll-mt-20">
+
+    <!-- Fundo Arquitetural Texturizado -->
+    <div class="absolute inset-0 bg-grid-architect opacity-55 pointer-events-none z-0"></div>
+    <div class="absolute top-1/3 left-0 w-[550px] h-[550px] bg-gradient-to-tr from-stone-200/50 via-orange-50/20 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-[1440px] mx-auto relative z-10">
+
+        <!-- 1. Cabeçalho Editorial da 3ª Dobra -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 md:mb-20 sec3-reveal">
+            <div>
+                <!-- Eyebrow Tag -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-300 bg-[#F5F5F0]/80 backdrop-blur-md mb-4 shadow-2xs">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF3300]"></span>
+                    <span class="font-mono text-[10px] uppercase tracking-[0.24em] text-stone-700">03 // Estúdio de Precisão &amp; Experiência</span>
+                </div>
+
+                <!-- Título com o Efeito de Luz e Contorno Vazado -->
+                <h2 class="text-4xl sm:text-5xl lg:text-[3.65rem] font-bold tracking-[-0.04em] leading-[1.06] mb-4">
+                    <span class="text-stone-900">Do pensamento</span> <span class="lettering-transparent cursor-pointer" title="BNI Nikiti">&amp; traço</span> <br />
+                    <span class="text-stone-900">ao rigor</span> <span class="font-serif italic font-normal text-[1.1em] tracking-tight lettering-image-clip">milimétrico</span><span class="text-[#FF3300]">.</span>
+                </h2>
+            </div>
+
+            <!-- Texto Editorial -->
+            <p class="text-sm sm:text-base text-stone-600 max-w-md font-normal leading-relaxed">
+                Experimente a física do contato com o papel em tempo real. Cada micrômetro da BNI Nikiti foi projetado para eliminar o atrito e conferir fidelidade absoluta entre o seu impulso criativo e a linha definitiva.
+            </p>
+        </div>
+
+        <!-- 2. O LABORATÓRIO INTERATIVO DE TESTE DO TRAÇO (Canvas de Desenho 0.10mm ao Vivo) -->
+        <div class="mb-20 md:mb-24 sec3-reveal">
+            <div class="relative rounded-2xl border border-stone-300/80 bg-[#FAF9F6] p-4 sm:p-7 shadow-[0_25px_60px_-15px_rgba(28,28,28,0.08)]">
+
+                <!-- Cantoneiras Técnicas Industriais -->
+                <div class="art-corner-mark -top-2.5 -left-2.5 border-t-2 border-l-2 border-stone-900"></div>
+                <div class="art-corner-mark -top-2.5 -right-2.5 border-t-2 border-r-2 border-stone-900"></div>
+                <div class="art-corner-mark -bottom-2.5 -left-2.5 border-b-2 border-l-2 border-stone-900"></div>
+                <div class="art-corner-mark -bottom-2.5 -right-2.5 border-b-2 border-r-2 border-stone-900"></div>
+
+                <!-- Barra de Ferramentas Superior da Prancha -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-4 mb-4 border-b border-stone-200">
+                    <div class="flex items-center gap-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-[#00CC66] animate-pulse"></span>
+                        <span class="font-mono text-[11px] uppercase tracking-wider text-stone-800 font-semibold">PRANCHA DE CALIBRAÇÃO 0.10MM // NANQUIM ARQUIVAL</span>
+                    </div>
+
+                    <!-- Botões de Ação do Canvas -->
+                    <div class="flex items-center gap-2">
+                        <Button type="button" id="btn-draw-free" variant="tab-dark" size="xs">
+                            Traço Livre
+                        </Button>
+                        <Button type="button" id="btn-draw-arch" variant="tab-outline" size="xs">
+                            ✦ Croqui Arquitetural
+                        </Button>
+                        <Button type="button" id="btn-clear-canvas" variant="tab-ghost" size="xs">
+                            Limpar
+                        </Button>
+                    </div>
+                </div>
+
+                <!-- Canvas Interativo -->
+                <div class="relative w-full overflow-hidden rounded-lg border border-stone-200 shadow-inner bg-white">
+                    <canvas id="sketch-canvas" class="studio-drawing-board w-full h-[320px] sm:h-[400px] block" aria-label="Prancha interativa de desenho técnico 0.10mm"></canvas>
+
+                    <!-- Marca d'Água de Instrução no Centro da Prancha -->
+                    <div id="canvas-hint" class="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-center p-6 transition-opacity duration-500">
+                        <div class="w-10 h-10 rounded-full border border-stone-300 bg-white/90 backdrop-blur-md flex items-center justify-center text-stone-500 mb-2 shadow-xs">
+                            <svg class="w-5 h-5 text-stone-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                            </svg>
+                        </div>
+                        <span class="font-mono text-xs uppercase tracking-[0.2em] text-stone-700 font-semibold">Arraste para experimentar o traço</span>
+                        <span class="font-mono text-[10px] text-stone-400 mt-1">Simulação física real de fluxo de nanquim e calibragem de 0.10mm</span>
+                    </div>
+                </div>
+
+                <!-- Barra Inferior de Telemetria Dinâmica -->
+                <div class="mt-4 pt-3 flex flex-wrap items-center justify-between gap-3 text-stone-500 font-mono text-[10px] tracking-wider uppercase border-t border-stone-200/80">
+                    <div class="flex items-center gap-4">
+                        <span>COORDENADAS: <strong id="tele-coords" class="text-stone-900 font-semibold">X: 000 · Y: 000</strong></span>
+                        <span class="hidden sm:inline">VELOCIDADE: <strong id="tele-speed" class="text-stone-900 font-semibold">0 mm/s</strong></span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span>FLUXO DE TINTA: <strong class="text-stone-900 font-semibold">100% REGULADO</strong></span>
+                        <span class="text-[#FF3300] font-semibold">● CALIBRADA ±0.005MM</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 3. ANATOMIA MECÂNICA DESMEMBRADA (3 Pilares de Engenharia Industrial) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 md:mb-24 sec3-reveal">
+
+            <!-- Coluna A -->
+            <div class="p-7 rounded-2xl border border-stone-300 bg-[#F5F5F0]/60 backdrop-blur-sm flex flex-col justify-between hover:border-stone-900 transition-colors duration-400 group">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-mono text-[10px] text-stone-400 tracking-[0.2em] uppercase font-semibold">MÓDULO 01</span>
+                        <span class="w-2 h-2 rounded-full bg-stone-300 group-hover:bg-[#FF3300] transition-colors"></span>
+                    </div>
+                    <h3 class="text-xl font-bold tracking-tight text-stone-900 mb-2 leading-snug">
+                        Cilindro Monobloco <br /><span class="font-serif italic font-normal text-[1.1em] lettering-image-clip">Alumínio 7075</span>
+                    </h3>
+                    <p class="text-xs sm:text-[0.8125rem] text-stone-600 leading-relaxed mt-3">
+                        Barra maciça forjada a frio e desbastada em centros CNC aeroespaciais. Sem qualquer junção soldada ou ponto de fadiga mecânica.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-stone-300/80 flex items-center justify-between font-mono text-[10px] text-stone-500 uppercase">
+                    <span>Dureza 150 HB</span>
+                    <span class="text-stone-900 font-semibold">Usinagem CNC 5 Eixos</span>
+                </div>
+            </div>
+
+            <!-- Coluna B -->
+            <div class="p-7 rounded-2xl border border-stone-300 bg-[#F5F5F0]/60 backdrop-blur-sm flex flex-col justify-between hover:border-stone-900 transition-colors duration-400 group">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-mono text-[10px] text-stone-400 tracking-[0.2em] uppercase font-semibold">MÓDULO 02</span>
+                        <span class="w-2 h-2 rounded-full bg-stone-300 group-hover:bg-[#FF3300] transition-colors"></span>
+                    </div>
+                    <h3 class="text-xl font-bold tracking-tight text-stone-900 mb-2 leading-snug">
+                        Eixo Gravidade Zero <br /><span class="font-serif italic font-normal text-[1.1em] lettering-image-clip">Equilíbrio 18.4g</span>
+                    </h3>
+                    <p class="text-xs sm:text-[0.8125rem] text-stone-600 leading-relaxed mt-3">
+                        O centro de massa foi matematicamente posicionado no terço inferior para que a caneta assente com firmeza no papel pelo próprio peso.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-stone-300/80 flex items-center justify-between font-mono text-[10px] text-stone-500 uppercase">
+                    <span>Torque Zero</span>
+                    <span class="text-stone-900 font-semibold">Sem Fadiga Muscular</span>
+                </div>
+            </div>
+
+            <!-- Coluna C -->
+            <div class="p-7 rounded-2xl border border-stone-300 bg-[#F5F5F0]/60 backdrop-blur-sm flex flex-col justify-between hover:border-stone-900 transition-colors duration-400 group">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-mono text-[10px] text-stone-400 tracking-[0.2em] uppercase font-semibold">MÓDULO 03</span>
+                        <span class="w-2 h-2 rounded-full bg-stone-300 group-hover:bg-[#FF3300] transition-colors"></span>
+                    </div>
+                    <h3 class="text-xl font-bold tracking-tight text-stone-900 mb-2 leading-snug">
+                        Microponta &amp; Colar <br /><span class="font-serif italic font-normal text-[1.1em] lettering-image-clip">Titânio Grau 5</span>
+                    </h3>
+                    <p class="text-xs sm:text-[0.8125rem] text-stone-600 leading-relaxed mt-3">
+                        Guia cilíndrica alongada de 4mm em titânio que proporciona visão periférica límpida do traço em conjunto com esquadros e réguas pesadas.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-stone-300/80 flex items-center justify-between font-mono text-[10px] text-stone-500 uppercase">
+                    <span>Poliacetal Calibrado</span>
+                    <span class="text-stone-900 font-semibold">Espessura 0.10mm</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 4. BENCHMARK COMPARATIVO ARQUITETURAL (Apple-grade Comparison Matrix) -->
+        <div class="mb-20 md:mb-24 sec3-reveal">
+            <div class="border border-stone-300 rounded-2xl bg-[#FAF9F6] overflow-hidden shadow-xs">
+                <div class="p-6 md:p-8 border-b border-stone-300 bg-[#F5F5F0] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <span class="font-mono text-[10px] uppercase tracking-[0.25em] text-[#FF3300] font-semibold">BENCHMARK COMPARATIVO</span>
+                        <h3 class="text-2xl font-bold tracking-tight text-stone-900 mt-1">A Diferença que se Sente no Traço</h3>
+                    </div>
+                    <span class="font-mono text-[11px] text-stone-500 uppercase tracking-wider">Normas ISO 14145-2 &amp; ASTM B221</span>
+                </div>
+
+                <div class="divide-y divide-stone-200">
+                    <!-- Linha 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 p-5 md:p-6 benchmark-row items-center gap-3">
+                        <div class="md:col-span-4 font-mono text-xs uppercase tracking-wider text-stone-500">Constância do Traço</div>
+                        <div class="md:col-span-4 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#00CC66]"></span>
+                            <span class="font-semibold text-stone-900 text-sm">0.10mm rigorosamente constante</span>
+                            <span class="font-mono text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">BNI NIKITI</span>
+                        </div>
+                        <div class="md:col-span-4 text-xs text-stone-500 font-mono">Canetas comuns: Oscila 0.4mm a 1.2mm com vazamentos</div>
+                    </div>
+
+                    <!-- Linha 2 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 p-5 md:p-6 benchmark-row items-center gap-3">
+                        <div class="md:col-span-4 font-mono text-xs uppercase tracking-wider text-stone-500">Resistência do Pigmento</div>
+                        <div class="md:col-span-4 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#00CC66]"></span>
+                            <span class="font-semibold text-stone-900 text-sm">Nanquim japonês arquival 100+ anos</span>
+                            <span class="font-mono text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">À PROVA D'ÁGUA</span>
+                        </div>
+                        <div class="md:col-span-4 text-xs text-stone-500 font-mono">Canetas comuns: Tinta solúvel que borra e desbota ao sol</div>
+                    </div>
+
+                    <!-- Linha 3 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 p-5 md:p-6 benchmark-row items-center gap-3">
+                        <div class="md:col-span-4 font-mono text-xs uppercase tracking-wider text-stone-500">Chassi &amp; Construção</div>
+                        <div class="md:col-span-4 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#00CC66]"></span>
+                            <span class="font-semibold text-stone-900 text-sm">Alumínio Aeroespacial 7075 usinado</span>
+                            <span class="font-mono text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">UNIBODY</span>
+                        </div>
+                        <div class="md:col-span-4 text-xs text-stone-500 font-mono">Canetas comuns: Corpo em plástico descartável de 6g</div>
+                    </div>
+
+                    <!-- Linha 4 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 p-5 md:p-6 benchmark-row items-center gap-3">
+                        <div class="md:col-span-4 font-mono text-xs uppercase tracking-wider text-stone-500">Ciclo de Vida &amp; Garantia</div>
+                        <div class="md:col-span-4 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#00CC66]"></span>
+                            <span class="font-semibold text-stone-900 text-sm">Garantia Estrutural Vitalícia</span>
+                            <span class="font-mono text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">PERPÉTUA</span>
+                        </div>
+                        <div class="md:col-span-4 text-xs text-stone-500 font-mono">Canetas comuns: Descarte após 200m de traço</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. O QUE ACOMPANHA O ESTÚDIO & CTA DEFINITIVO (Conic Shimmer Beam do Design System) -->
+        <div class="rounded-3xl border border-stone-300 bg-gradient-to-b from-[#F5F5F0] to-[#EAEAE5] p-8 md:p-14 relative overflow-hidden shadow-lg sec3-reveal">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-bl from-orange-200/40 via-stone-200/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                <div class="lg:col-span-7">
+                    <span class="font-mono text-[10px] uppercase tracking-[0.25em] text-[#FF3300] font-semibold">EDIÇÃO COMPLETA DE ESTÚDIO</span>
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 mt-2 mb-4 leading-tight">
+                        Tudo o que você precisa para desenhar sem limites.
+                    </h3>
+                    <p class="text-sm sm:text-base text-stone-600 font-normal leading-relaxed mb-6">
+                        Cada unidade da BNI Nikiti Pigmentum 0.1 é calibrada manualmente em laboratório, numerada e acompanhada de refis de nanquim e estojo protetor de transporte.
+                    </p>
+
+                    <!-- Lista de Itens Inclusos -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 font-mono text-xs text-stone-700">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-[#FF3300] font-bold">✓</span> 1x Caneta BNI Nikiti (Alumínio 7075)
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-[#FF3300] font-bold">✓</span> 3x Recargas Nanquim Japonês 0.1mm
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-[#FF3300] font-bold">✓</span> 1x Estojo Metálico de Proteção Anodizado
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-[#FF3300] font-bold">✓</span> 1x Certificado Individual Assinado
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna do Botão de Compra com Conic Shimmer Beam -->
+                <div class="lg:col-span-5 flex flex-col items-center lg:items-end justify-center text-center lg:text-right">
+                    <div class="mb-4">
+                        <div class="font-mono text-xs uppercase tracking-wider text-stone-500">Preço Especial de Lançamento</div>
+                        <div class="text-4xl md:text-5xl font-bold tracking-tight text-stone-900 mt-1">R$ 649 <span class="text-sm font-normal text-stone-500">ou 12x R$ 62,80</span></div>
+                    </div>
+
+                    <!-- Botão Conic Shimmer Beam oficial de assets/design_system.html -->
+                    <Button type="button" id="final-buy-btn" variant="conic" size="xl">
+                        <span class="font-mono text-xs uppercase tracking-[0.2em] font-semibold">Comprar BNI Nikiti Agora</span>
+                        <svg class="w-4 h-4 text-[#FF3300] transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </Button>
+
+                    <div class="mt-4 flex items-center gap-4 text-stone-500 font-mono text-[10px] uppercase tracking-wider">
+                        <span>✦ FRETE GRÁTIS BRASIL</span>
+                        <span>✦ 30 DIAS TESTE</span>
+                        <span>✦ ENVIO EM 24H</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+

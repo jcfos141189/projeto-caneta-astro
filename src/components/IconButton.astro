@@ -1,0 +1,45 @@
+---
+// IconButton Component — BNI Nikiti Design System
+interface Props {
+    id?: string;
+    href?: string;
+    type?: 'button' | 'submit' | 'reset';
+    ariaLabel?: string;
+    badge?: string | number;
+    badgeId?: string;
+    class?: string;
+    [key: string]: any;
+}
+
+const {
+    id,
+    href,
+    type = 'button',
+    ariaLabel,
+    badge,
+    badgeId,
+    class: className = '',
+    ...rest
+} = Astro.props;
+
+const Element = href ? 'a' : 'button';
+const elementProps = href ? { href, ...rest } : { type, ...rest };
+---
+
+<Element
+    id={id}
+    class:list={['icon-pill-btn', badge ? 'relative' : '', className]}
+    aria-label={ariaLabel}
+    {...elementProps}
+>
+    <slot />
+    {badge !== undefined && (
+        <span 
+            id={badgeId} 
+            class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-stone-900 text-white font-mono text-[9px] font-bold flex items-center justify-center"
+        >
+            {badge}
+        </span>
+    )}
+</Element>
+

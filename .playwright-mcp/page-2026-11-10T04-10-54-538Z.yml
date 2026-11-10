@@ -1,0 +1,537 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - navigation "Navegação Principal" [ref=f1e4]:
+        - link "Início" [ref=f1e5] [cursor=pointer]:
+          - /url: /#hero
+        - link "Sobre" [ref=f1e6] [cursor=pointer]:
+          - /url: /#craft
+        - link "Tintas" [ref=f1e7] [cursor=pointer]:
+          - /url: /#tintas
+        - link "Loja" [ref=f1e8] [cursor=pointer]:
+          - /url: /#specs
+        - link "Catálogo" [ref=f1e9] [cursor=pointer]:
+          - /url: /pagina-2
+        - link "Detalhes" [ref=f1e10] [cursor=pointer]:
+          - /url: /pagina-3
+        - link "Sistema.v4" [ref=f1e11] [cursor=pointer]:
+          - /url: /assets/design_system.html
+      - link "Início BNI Nikiti" [ref=f1e12] [cursor=pointer]:
+        - /url: "#hero"
+        - generic [ref=f1e19]: BNI NIKITI.01
+      - generic [ref=f1e20]:
+        - button "Buscar" [ref=f1e21] [cursor=pointer]
+        - button "Sacola de Compras" [ref=f1e25] [cursor=pointer]:
+          - generic [ref=f1e29]: "1"
+        - link "Comprar Agora" [ref=f1e30] [cursor=pointer]:
+          - /url: "#buy-cta"
+  - main [ref=f1e33]:
+    - generic [ref=f1e34]:
+      - generic [ref=f1e35]:
+        - generic [ref=f1e36]:
+          - generic [ref=f1e37]: Catálogo Completo // 09 Modelos
+          - heading "Instrumentos de Precisão Arquitetural." [level=1] [ref=f1e40]:
+            - text: Instrumentos de
+            - generic [ref=f1e41]: Precisão
+            - text: Arquitetural.
+          - paragraph [ref=f1e42]: Nove canetas calibradas em centro de usinagem CNC de 5 eixos para as diversas fases do raciocínio projetual — do primeiro traço conceitual à prancha executiva final.
+        - generic [ref=f1e43]:
+          - generic [ref=f1e44]:
+            - text: Exibindo
+            - strong [ref=f1e45]: 9 de 9
+            - text: instrumentos
+          - link "Ver Paleta de Tintas →" [ref=f1e46] [cursor=pointer]:
+            - /url: /#tintas
+            - generic [ref=f1e47]: Ver Paleta de Tintas
+            - generic [ref=f1e48]: →
+      - generic [ref=f1e49]:
+        - article [ref=f1e50]:
+          - generic [ref=f1e51]:
+            - generic [ref=f1e52]:
+              - generic [ref=f1e53]: MOD. 01/09
+              - generic [ref=f1e54]:
+                - generic [ref=f1e55]: ●
+                - generic [ref=f1e56]: Lote 02 em Produção
+            - link "BNI Nikiti 0.1 — Pigmentum Original 0.10mm Ficha Técnica →" [ref=f1e57] [cursor=pointer]:
+              - /url: /pagina-3?id=nikiti-01
+              - img "BNI Nikiti 0.1 — Pigmentum Original" [ref=f1e58]
+              - generic [ref=f1e59]: 0.10mm
+              - generic [ref=f1e60]:
+                - generic [ref=f1e61]: Ficha Técnica
+                - generic [ref=f1e62]: →
+            - heading [level=2] [ref=f1e63]:
+              - link "BNI Nikiti 0.1 — Pigmentum Original" [ref=f1e64] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-01
+            - generic [ref=f1e65]: Série Nanquim Absoluto
+            - paragraph [ref=f1e66]: O modelo emblemático da marca. Desenvolvido para traçado milimétrico em papel vegetal e croquis de detalhamento fino.
+            - generic [ref=f1e67]:
+              - generic [ref=f1e68]:
+                - generic [ref=f1e69]: PONTA
+                - strong [ref=f1e70]: 0.10mm Esfera Cerâmica
+              - generic [ref=f1e71]:
+                - generic [ref=f1e72]: CHASSI & PESO
+                - strong [ref=f1e73]: Alumínio 7075-T6 Usinado
+              - generic [ref=f1e74]:
+                - generic [ref=f1e75]: MECANISMO
+                - strong [ref=f1e76]: Trava Neodímio N52
+              - generic [ref=f1e77]:
+                - generic [ref=f1e78]: ACABAMENTO
+                - strong [ref=f1e79]: Anodizado Fosco Acetinado 25µm
+            - generic [ref=f1e80]:
+              - generic [ref=f1e81]:
+                - generic [ref=f1e82]: "Tintas Disponíveis:"
+                - generic [ref=f1e83]: 3 Matizes
+              - generic [ref=f1e84]:
+                - 'generic "Tinta compatível: Nanquim Profundo" [ref=f1e85]': Nanquim Profundo
+                - 'generic "Tinta compatível: Índigo Meia-Noite" [ref=f1e88]': Índigo Meia-Noite
+                - 'generic "Tinta compatível: Sépia Arquival" [ref=f1e91]': Sépia Arquival
+          - generic [ref=f1e94]:
+            - generic [ref=f1e95]:
+              - generic [ref=f1e96]: Estimativa
+              - generic [ref=f1e97]: R$ 649 / unid
+            - generic [ref=f1e98]:
+              - link "Ficha Técnica →" [ref=f1e99] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-01
+                - generic [ref=f1e100]: Ficha Técnica
+                - generic [ref=f1e101]: →
+              - button "Avise-me" [ref=f1e102] [cursor=pointer]
+        - article [ref=f1e107]:
+          - generic [ref=f1e108]:
+            - generic [ref=f1e109]:
+              - generic [ref=f1e110]: MOD. 02/09
+              - generic [ref=f1e111]:
+                - generic [ref=f1e112]: ●
+                - generic [ref=f1e113]: Série Limitada (300 un.)
+            - link "BNI Nikiti 0.05 — Micron Isograph 0.05mm Ficha Técnica →" [ref=f1e114] [cursor=pointer]:
+              - /url: /pagina-3?id=nikiti-005
+              - img "BNI Nikiti 0.05 — Micron Isograph" [ref=f1e115]
+              - generic [ref=f1e116]: 0.05mm
+              - generic [ref=f1e117]:
+                - generic [ref=f1e118]: Ficha Técnica
+                - generic [ref=f1e119]: →
+            - heading [level=2] [ref=f1e120]:
+              - link "BNI Nikiti 0.05 — Micron Isograph" [ref=f1e121] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-005
+            - generic [ref=f1e122]: Série Cartografia & Topografia
+            - paragraph [ref=f1e123]: Calibração sub-milimétrica com agulha de safira sintética. Precisão microscópica para curvas de nível e hachuras de alta densidade.
+            - generic [ref=f1e124]:
+              - generic [ref=f1e125]:
+                - generic [ref=f1e126]: PONTA
+                - strong [ref=f1e127]: 0.05mm Safira Sintética
+              - generic [ref=f1e128]:
+                - generic [ref=f1e129]: CHASSI & PESO
+                - strong [ref=f1e130]: Alumínio Monobloco 6061-T6
+              - generic [ref=f1e131]:
+                - generic [ref=f1e132]: MECANISMO
+                - strong [ref=f1e133]: Alimentação Barométrica Ativa
+              - generic [ref=f1e134]:
+                - generic [ref=f1e135]: ACABAMENTO
+                - strong [ref=f1e136]: Micro-Ranhurado CNC 360°
+            - generic [ref=f1e137]:
+              - generic [ref=f1e138]:
+                - generic [ref=f1e139]: "Tintas Disponíveis:"
+                - generic [ref=f1e140]: 3 Matizes
+              - generic [ref=f1e141]:
+                - 'generic "Tinta compatível: Nanquim Profundo" [ref=f1e142]': Nanquim Profundo
+                - 'generic "Tinta compatível: Índigo Meia-Noite" [ref=f1e145]': Índigo Meia-Noite
+                - 'generic "Tinta compatível: Grafite Carbono" [ref=f1e148]': Grafite Carbono
+          - generic [ref=f1e151]:
+            - generic [ref=f1e152]:
+              - generic [ref=f1e153]: Estimativa
+              - generic [ref=f1e154]: R$ 890 / unid
+            - generic [ref=f1e155]:
+              - link "Ficha Técnica →" [ref=f1e156] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-005
+                - generic [ref=f1e157]: Ficha Técnica
+                - generic [ref=f1e158]: →
+              - button "Avise-me" [ref=f1e159] [cursor=pointer]
+        - article [ref=f1e164]:
+          - generic [ref=f1e165]:
+            - generic [ref=f1e166]:
+              - generic [ref=f1e167]: MOD. 03/09
+              - generic [ref=f1e168]:
+                - generic [ref=f1e169]: ●
+                - generic [ref=f1e170]: Próximo Lançamento
+            - link "BNI Nikiti 0.2 — Drafter Pro 0.20mm Ficha Técnica →" [ref=f1e171] [cursor=pointer]:
+              - /url: /pagina-3?id=nikiti-02
+              - img "BNI Nikiti 0.2 — Drafter Pro" [ref=f1e172]
+              - generic [ref=f1e173]: 0.20mm
+              - generic [ref=f1e174]:
+                - generic [ref=f1e175]: Ficha Técnica
+                - generic [ref=f1e176]: →
+            - heading [level=2] [ref=f1e177]:
+              - link "BNI Nikiti 0.2 — Drafter Pro" [ref=f1e178] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-02
+            - generic [ref=f1e179]: Série Croqui & Drafting
+            - paragraph [ref=f1e180]: Caneta de resposta rápida para desenhos conceituais e perspectivas livres com centro de gravidade neutro.
+            - generic [ref=f1e181]:
+              - generic [ref=f1e182]:
+                - generic [ref=f1e183]: PONTA
+                - strong [ref=f1e184]: 0.20mm Carboneto de Tungstênio
+              - generic [ref=f1e185]:
+                - generic [ref=f1e186]: CHASSI & PESO
+                - strong [ref=f1e187]: Titânio Grau 5 (Ti-6Al-4V)
+              - generic [ref=f1e188]:
+                - generic [ref=f1e189]: MECANISMO
+                - strong [ref=f1e190]: Retração Axial Esferizada
+              - generic [ref=f1e191]:
+                - generic [ref=f1e192]: ACABAMENTO
+                - strong [ref=f1e193]: Jateado a Microesferas Cerâmicas
+            - generic [ref=f1e194]:
+              - generic [ref=f1e195]:
+                - generic [ref=f1e196]: "Tintas Disponíveis:"
+                - generic [ref=f1e197]: 3 Matizes
+              - generic [ref=f1e198]:
+                - 'generic "Tinta compatível: Nanquim Profundo" [ref=f1e199]': Nanquim Profundo
+                - 'generic "Tinta compatível: Terracota Mineral" [ref=f1e202]': Terracota Mineral
+                - 'generic "Tinta compatível: Azul da Prússia" [ref=f1e205]': Azul da Prússia
+          - generic [ref=f1e208]:
+            - generic [ref=f1e209]:
+              - generic [ref=f1e210]: Estimativa
+              - generic [ref=f1e211]: R$ 789 / unid
+            - generic [ref=f1e212]:
+              - link "Ficha Técnica →" [ref=f1e213] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-02
+                - generic [ref=f1e214]: Ficha Técnica
+                - generic [ref=f1e215]: →
+              - button "Avise-me" [ref=f1e216] [cursor=pointer]
+        - article [ref=f1e221]:
+          - generic [ref=f1e222]:
+            - generic [ref=f1e223]:
+              - generic [ref=f1e224]: MOD. 04/09
+              - generic [ref=f1e225]:
+                - generic [ref=f1e226]: ●
+                - generic [ref=f1e227]: Protótipo Aprovado
+            - link "BNI Nikiti 0.35 — Blueprint Master 0.35mm Ficha Técnica →" [ref=f1e228] [cursor=pointer]:
+              - /url: /pagina-3?id=nikiti-035
+              - img "BNI Nikiti 0.35 — Blueprint Master" [ref=f1e229]
+              - generic [ref=f1e230]: 0.35mm
+              - generic [ref=f1e231]:
+                - generic [ref=f1e232]: Ficha Técnica
+                - generic [ref=f1e233]: →
+            - heading [level=2] [ref=f1e234]:
+              - link "BNI Nikiti 0.35 — Blueprint Master" [ref=f1e235] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-035
+            - generic [ref=f1e236]: Série Plantas & Pranchas
+            - paragraph [ref=f1e237]: Linhas estruturais nítidas e constantes que não borram sob réguas paralelas nem esquadros metálicos de 4mm.
+            - generic [ref=f1e238]:
+              - generic [ref=f1e239]:
+                - generic [ref=f1e240]: PONTA
+                - strong [ref=f1e241]: 0.35mm Aço Valvo Calibrado
+              - generic [ref=f1e242]:
+                - generic [ref=f1e243]: CHASSI & PESO
+                - strong [ref=f1e244]: Latão Náutico Usinado C360
+              - generic [ref=f1e245]:
+                - generic [ref=f1e246]: MECANISMO
+                - strong [ref=f1e247]: Rosca Quádrupla Rápida (1/4 de volta)
+              - generic [ref=f1e248]:
+                - generic [ref=f1e249]: ACABAMENTO
+                - strong [ref=f1e250]: Pátina Industrial Ativa
+            - generic [ref=f1e251]:
+              - generic [ref=f1e252]:
+                - generic [ref=f1e253]: "Tintas Disponíveis:"
+                - generic [ref=f1e254]: 3 Matizes
+              - generic [ref=f1e255]:
+                - 'generic "Tinta compatível: Azul da Prússia" [ref=f1e256]': Azul da Prússia
+                - 'generic "Tinta compatível: Nanquim Profundo" [ref=f1e259]': Nanquim Profundo
+                - 'generic "Tinta compatível: Carmim Escarlate" [ref=f1e262]': Carmim Escarlate
+          - generic [ref=f1e265]:
+            - generic [ref=f1e266]:
+              - generic [ref=f1e267]: Estimativa
+              - generic [ref=f1e268]: R$ 820 / unid
+            - generic [ref=f1e269]:
+              - link "Ficha Técnica →" [ref=f1e270] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-035
+                - generic [ref=f1e271]: Ficha Técnica
+                - generic [ref=f1e272]: →
+              - button "Avise-me" [ref=f1e273] [cursor=pointer]
+        - article [ref=f1e278]:
+          - generic [ref=f1e279]:
+            - generic [ref=f1e280]:
+              - generic [ref=f1e281]: MOD. 05/09
+              - generic [ref=f1e282]:
+                - generic [ref=f1e283]: ●
+                - generic [ref=f1e284]: Lista de Espera
+            - link "BNI Nikiti 0.5 — Monolith Matte 0.50mm Ficha Técnica →" [ref=f1e285] [cursor=pointer]:
+              - /url: /pagina-3?id=nikiti-05
+              - img "BNI Nikiti 0.5 — Monolith Matte" [ref=f1e286]
+              - generic [ref=f1e287]: 0.50mm
+              - generic [ref=f1e288]:
+                - generic [ref=f1e289]: Ficha Técnica
+                - generic [ref=f1e290]: →
+            - heading [level=2] [ref=f1e291]:
+              - link "BNI Nikiti 0.5 — Monolith Matte" [ref=f1e292] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-05
+            - generic [ref=f1e293]: Série Executiva & Canteiro
+            - paragraph [ref=f1e294]: Construção ultra-robusta com revestimento DLC anti-risco para suportar anotações técnicas sob qualquer clima de obra.
+            - generic [ref=f1e295]:
+              - generic [ref=f1e296]:
+                - generic [ref=f1e297]: PONTA
+                - strong [ref=f1e298]: 0.50mm Roller Cerâmico Híbrido
+              - generic [ref=f1e299]:
+                - generic [ref=f1e300]: CHASSI & PESO
+                - strong [ref=f1e301]: Aço Inox 316L DLC
+              - generic [ref=f1e302]:
+                - generic [ref=f1e303]: MECANISMO
+                - strong [ref=f1e304]: Pistão Interno Reversível
+              - generic [ref=f1e305]:
+                - generic [ref=f1e306]: ACABAMENTO
+                - strong [ref=f1e307]: Diamond-Like Carbon (DLC Fosco)
+            - generic [ref=f1e308]:
+              - generic [ref=f1e309]:
+                - generic [ref=f1e310]: "Tintas Disponíveis:"
+                - generic [ref=f1e311]: 3 Matizes
+              - generic [ref=f1e312]:
+                - 'generic "Tinta compatível: Preto Obsidiana" [ref=f1e313]': Preto Obsidiana
+                - 'generic "Tinta compatível: Vinho Borgonha" [ref=f1e316]': Vinho Borgonha
+                - 'generic "Tinta compatível: Cinza Basalto" [ref=f1e319]': Cinza Basalto
+          - generic [ref=f1e322]:
+            - generic [ref=f1e323]:
+              - generic [ref=f1e324]: Estimativa
+              - generic [ref=f1e325]: R$ 590 / unid
+            - generic [ref=f1e326]:
+              - link "Ficha Técnica →" [ref=f1e327] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-05
+                - generic [ref=f1e328]: Ficha Técnica
+                - generic [ref=f1e329]: →
+              - button "Avise-me" [ref=f1e330] [cursor=pointer]
+        - article [ref=f1e335]:
+          - generic [ref=f1e336]:
+            - generic [ref=f1e337]:
+              - generic [ref=f1e338]: MOD. 06/09
+              - generic [ref=f1e339]:
+                - generic [ref=f1e340]: ●
+                - generic [ref=f1e341]: Em Calibração Final
+            - link "BNI Nikiti 0.8 — Bold Calligraph 0.80mm Ficha Técnica →" [ref=f1e342] [cursor=pointer]:
+              - /url: /pagina-3?id=nikiti-08
+              - img "BNI Nikiti 0.8 — Bold Calligraph" [ref=f1e343]
+              - generic [ref=f1e344]: 0.80mm
+              - generic [ref=f1e345]:
+                - generic [ref=f1e346]: Ficha Técnica
+                - generic [ref=f1e347]: →
+            - heading [level=2] [ref=f1e348]:
+              - link "BNI Nikiti 0.8 — Bold Calligraph" [ref=f1e349] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-08
+            - generic [ref=f1e350]: Série Caligrafia & Hachura
+            - paragraph [ref=f1e351]: Ponta chanfrada em 15 graus para títulos e cotas arquiteturais marcantes com fluxo generoso de nanquim puro.
+            - generic [ref=f1e352]:
+              - generic [ref=f1e353]:
+                - generic [ref=f1e354]: PONTA
+                - strong [ref=f1e355]: 0.80mm Biselada 15°
+              - generic [ref=f1e356]:
+                - generic [ref=f1e357]: CHASSI & PESO
+                - strong [ref=f1e358]: Bronze Fósforo Usinado
+              - generic [ref=f1e359]:
+                - generic [ref=f1e360]: MECANISMO
+                - strong [ref=f1e361]: Tampa Magnética Soft-Click
+              - generic [ref=f1e362]:
+                - generic [ref=f1e363]: ACABAMENTO
+                - strong [ref=f1e364]: Bronze Escovado Manualmente
+            - generic [ref=f1e365]:
+              - generic [ref=f1e366]:
+                - generic [ref=f1e367]: "Tintas Disponíveis:"
+                - generic [ref=f1e368]: 3 Matizes
+              - generic [ref=f1e369]:
+                - 'generic "Tinta compatível: Âmbar Queimado" [ref=f1e370]': Âmbar Queimado
+                - 'generic "Tinta compatível: Sépia Arquival" [ref=f1e373]': Sépia Arquival
+                - 'generic "Tinta compatível: Nanquim Profundo" [ref=f1e376]': Nanquim Profundo
+          - generic [ref=f1e379]:
+            - generic [ref=f1e380]:
+              - generic [ref=f1e381]: Estimativa
+              - generic [ref=f1e382]: R$ 680 / unid
+            - generic [ref=f1e383]:
+              - link "Ficha Técnica →" [ref=f1e384] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-08
+                - generic [ref=f1e385]: Ficha Técnica
+                - generic [ref=f1e386]: →
+              - button "Avise-me" [ref=f1e387] [cursor=pointer]
+        - article [ref=f1e392]:
+          - generic [ref=f1e393]:
+            - generic [ref=f1e394]:
+              - generic [ref=f1e395]: MOD. 07/09
+              - generic [ref=f1e396]:
+                - generic [ref=f1e397]: ●
+                - generic [ref=f1e398]: Edição Exclusiva
+            - link "BNI Nikiti — Phantom Stealth 0.15mm Ficha Técnica →" [ref=f1e399] [cursor=pointer]:
+              - /url: /pagina-3?id=nikiti-stealth
+              - img "BNI Nikiti — Phantom Stealth" [ref=f1e400]
+              - generic [ref=f1e401]: 0.15mm
+              - generic [ref=f1e402]:
+                - generic [ref=f1e403]: Ficha Técnica
+                - generic [ref=f1e404]: →
+            - heading [level=2] [ref=f1e405]:
+              - link "BNI Nikiti — Phantom Stealth" [ref=f1e406] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-stealth
+            - generic [ref=f1e407]: Série Monocromática Especial
+            - paragraph [ref=f1e408]: Acabamento 100% preto fosco e sem logomarcas aparentes. Silêncio visual absoluto para imersão no raciocínio arquitetônico.
+            - generic [ref=f1e409]:
+              - generic [ref=f1e410]:
+                - generic [ref=f1e411]: PONTA
+                - strong [ref=f1e412]: 0.15mm Micro-Roller Híbrido
+              - generic [ref=f1e413]:
+                - generic [ref=f1e414]: CHASSI & PESO
+                - strong [ref=f1e415]: Alumínio Anodizado Black 7075
+              - generic [ref=f1e416]:
+                - generic [ref=f1e417]: MECANISMO
+                - strong [ref=f1e418]: Clipe Retrátil Oculto
+              - generic [ref=f1e419]:
+                - generic [ref=f1e420]: ACABAMENTO
+                - strong [ref=f1e421]: Preto Fosco Antirreflexo Total
+            - generic [ref=f1e422]:
+              - generic [ref=f1e423]:
+                - generic [ref=f1e424]: "Tintas Disponíveis:"
+                - generic [ref=f1e425]: 3 Matizes
+              - generic [ref=f1e426]:
+                - 'generic "Tinta compatível: Preto Obsidiana" [ref=f1e427]': Preto Obsidiana
+                - 'generic "Tinta compatível: Grafite Carbono" [ref=f1e430]': Grafite Carbono
+                - 'generic "Tinta compatível: Cinza Basalto" [ref=f1e433]': Cinza Basalto
+          - generic [ref=f1e436]:
+            - generic [ref=f1e437]:
+              - generic [ref=f1e438]: Estimativa
+              - generic [ref=f1e439]: R$ 740 / unid
+            - generic [ref=f1e440]:
+              - link "Ficha Técnica →" [ref=f1e441] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-stealth
+                - generic [ref=f1e442]: Ficha Técnica
+                - generic [ref=f1e443]: →
+              - button "Avise-me" [ref=f1e444] [cursor=pointer]
+        - article [ref=f1e449]:
+          - generic [ref=f1e450]:
+            - generic [ref=f1e451]:
+              - generic [ref=f1e452]: MOD. 08/09
+              - generic [ref=f1e453]:
+                - generic [ref=f1e454]: ●
+                - generic [ref=f1e455]: Pré-Produção
+            - link "BNI Nikiti Artisan — Raw Brass 0.25 0.25mm Ficha Técnica →" [ref=f1e456] [cursor=pointer]:
+              - /url: /pagina-3?id=nikiti-brass
+              - img "BNI Nikiti Artisan — Raw Brass 0.25" [ref=f1e457]
+              - generic [ref=f1e458]: 0.25mm
+              - generic [ref=f1e459]:
+                - generic [ref=f1e460]: Ficha Técnica
+                - generic [ref=f1e461]: →
+            - heading [level=2] [ref=f1e462]:
+              - link "BNI Nikiti Artisan — Raw Brass 0.25" [ref=f1e463] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-brass
+            - generic [ref=f1e464]: Série Pátina Viva
+            - paragraph [ref=f1e465]: Latão maciço sem verniz industrial. A superfície oxida naturalmente conforme seu uso, registrando sua trajetória criativa.
+            - generic [ref=f1e466]:
+              - generic [ref=f1e467]:
+                - generic [ref=f1e468]: PONTA
+                - strong [ref=f1e469]: 0.25mm Ponteira Cônica Usinada
+              - generic [ref=f1e470]:
+                - generic [ref=f1e471]: CHASSI & PESO
+                - strong [ref=f1e472]: Latão Maciço Dourado C260
+              - generic [ref=f1e473]:
+                - generic [ref=f1e474]: MECANISMO
+                - strong [ref=f1e475]: Alimentação Capilar Tripla
+              - generic [ref=f1e476]:
+                - generic [ref=f1e477]: ACABAMENTO
+                - strong [ref=f1e478]: Latão Bruto Torneado
+            - generic [ref=f1e479]:
+              - generic [ref=f1e480]:
+                - generic [ref=f1e481]: "Tintas Disponíveis:"
+                - generic [ref=f1e482]: 3 Matizes
+              - generic [ref=f1e483]:
+                - 'generic "Tinta compatível: Terracota Mineral" [ref=f1e484]': Terracota Mineral
+                - 'generic "Tinta compatível: Verde Musgo Imperial" [ref=f1e487]': Verde Musgo Imperial
+                - 'generic "Tinta compatível: Sépia Arquival" [ref=f1e490]': Sépia Arquival
+          - generic [ref=f1e493]:
+            - generic [ref=f1e494]:
+              - generic [ref=f1e495]: Estimativa
+              - generic [ref=f1e496]: R$ 760 / unid
+            - generic [ref=f1e497]:
+              - link "Ficha Técnica →" [ref=f1e498] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-brass
+                - generic [ref=f1e499]: Ficha Técnica
+                - generic [ref=f1e500]: →
+              - button "Avise-me" [ref=f1e501] [cursor=pointer]
+        - article [ref=f1e506]:
+          - generic [ref=f1e507]:
+            - generic [ref=f1e508]:
+              - generic [ref=f1e509]: MOD. 09/09
+              - generic [ref=f1e510]:
+                - generic [ref=f1e511]: ●
+                - generic [ref=f1e512]: Edição Flagship
+            - link "BNI Nikiti Aero — Feather Carbon 0.1 0.10mm Ficha Técnica →" [ref=f1e513] [cursor=pointer]:
+              - /url: /pagina-3?id=nikiti-carbon
+              - img "BNI Nikiti Aero — Feather Carbon 0.1" [ref=f1e514]
+              - generic [ref=f1e515]: 0.10mm
+              - generic [ref=f1e516]:
+                - generic [ref=f1e517]: Ficha Técnica
+                - generic [ref=f1e518]: →
+            - heading [level=2] [ref=f1e519]:
+              - link "BNI Nikiti Aero — Feather Carbon 0.1" [ref=f1e520] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-carbon
+            - generic [ref=f1e521]: Série Flagship Ultraleve
+            - paragraph [ref=f1e522]: Fibra de carbono forjada e fixadores em titânio. Pesando somente 12g, reduz o cansaço do punho a praticamente zero.
+            - generic [ref=f1e523]:
+              - generic [ref=f1e524]:
+                - generic [ref=f1e525]: PONTA
+                - strong [ref=f1e526]: 0.10mm Cerâmica Ultra-Fina
+              - generic [ref=f1e527]:
+                - generic [ref=f1e528]: CHASSI & PESO
+                - strong [ref=f1e529]: Fibra de Carbono Forjada + Titânio
+              - generic [ref=f1e530]:
+                - generic [ref=f1e531]: MECANISMO
+                - strong [ref=f1e532]: Rosca Titânio com O-Ring Vedante
+              - generic [ref=f1e533]:
+                - generic [ref=f1e534]: ACABAMENTO
+                - strong [ref=f1e535]: Padrão Carbono Forjado Marmorizado
+            - generic [ref=f1e536]:
+              - generic [ref=f1e537]:
+                - generic [ref=f1e538]: "Tintas Disponíveis:"
+                - generic [ref=f1e539]: 3 Matizes
+              - generic [ref=f1e540]:
+                - 'generic "Tinta compatível: Nanquim Profundo" [ref=f1e541]': Nanquim Profundo
+                - 'generic "Tinta compatível: Carmim Escarlate" [ref=f1e544]': Carmim Escarlate
+                - 'generic "Tinta compatível: Azul Cobalto Profundo" [ref=f1e547]': Azul Cobalto Profundo
+          - generic [ref=f1e550]:
+            - generic [ref=f1e551]:
+              - generic [ref=f1e552]: Estimativa
+              - generic [ref=f1e553]: R$ 950 / unid
+            - generic [ref=f1e554]:
+              - link "Ficha Técnica →" [ref=f1e555] [cursor=pointer]:
+                - /url: /pagina-3?id=nikiti-carbon
+                - generic [ref=f1e556]: Ficha Técnica
+                - generic [ref=f1e557]: →
+              - button "Avise-me" [ref=f1e558] [cursor=pointer]
+      - generic [ref=f1e563]:
+        - generic [ref=f1e564]:
+          - heading "Precisa de calibração personalizada para seu escritório?" [level=3] [ref=f1e565]
+          - paragraph [ref=f1e566]: Produzimos edições corporativas gravadas a laser para escritórios de arquitetura e estúdios de design industrial.
+        - link "← Voltar ao Modelo Original" [ref=f1e568] [cursor=pointer]:
+          - /url: /#hero
+    - generic:
+      - generic:
+        - button "Fechar Modal"
+        - generic:
+          - generic:
+            - generic:
+              - img "Preview da Caneta"
+            - generic:
+              - generic: MOD. 00/09
+              - heading "Nome da Caneta" [level=4]
+          - paragraph: Insira seu e-mail para receber acesso prioritário 24 horas antes do lançamento oficial, com condição especial de lote inicial.
+          - generic:
+            - generic:
+              - generic: Seu E-mail Profissional
+              - textbox "Seu E-mail Profissional":
+                - /placeholder: arquiteto@estudio.com.br
+            - button "Confirmar Notificação Prioritária ✦":
+              - generic: Confirmar Notificação Prioritária
+              - generic: ✦
+  - contentinfo [ref=f1e570]:
+    - generic [ref=f1e571]:
+      - generic [ref=f1e572]: BNI NIKITI // PIGMENTUM 0.1
+      - generic [ref=f1e578]:
+        - link "Início" [ref=f1e579] [cursor=pointer]:
+          - /url: "#hero"
+        - link "Manifesto" [ref=f1e580] [cursor=pointer]:
+          - /url: "#specs"
+        - link "Estúdio" [ref=f1e581] [cursor=pointer]:
+          - /url: "#studio"
+        - link "Adquirir" [ref=f1e582] [cursor=pointer]:
+          - /url: "#buy-cta"
+        - link "Sistema v4.0" [ref=f1e583] [cursor=pointer]:
+          - /url: /assets/design_system.html
+      - generic [ref=f1e584]: © 2026 BNI NIKITI. PROJETADA PARA O RIGOR ARQUITETURAL.

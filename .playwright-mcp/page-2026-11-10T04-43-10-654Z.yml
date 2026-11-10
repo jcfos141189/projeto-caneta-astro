@@ -1,0 +1,320 @@
+- generic [ref=f19e1]:
+  - banner [ref=f19e2]:
+    - generic [ref=f19e3]:
+      - navigation "Navegação Principal" [ref=f19e4]:
+        - link "Início" [ref=f19e5] [cursor=pointer]:
+          - /url: /#hero
+        - link "Sobre" [ref=f19e6] [cursor=pointer]:
+          - /url: /#craft
+        - link "Tintas" [ref=f19e7] [cursor=pointer]:
+          - /url: /#tintas
+        - link "Loja" [ref=f19e8] [cursor=pointer]:
+          - /url: /#specs
+        - link "Catálogo" [ref=f19e9] [cursor=pointer]:
+          - /url: /pagina-2
+        - link "Detalhes" [ref=f19e10] [cursor=pointer]:
+          - /url: /pagina-3
+        - link "Sistema.v4" [ref=f19e11] [cursor=pointer]:
+          - /url: /assets/design_system.html
+      - link "Início BNI Nikiti" [ref=f19e12] [cursor=pointer]:
+        - /url: "#hero"
+        - generic [ref=f19e19]: BNI NIKITI.01
+      - generic [ref=f19e20]:
+        - button "Buscar" [ref=f19e21] [cursor=pointer]
+        - button "Sacola de Compras" [ref=f19e25] [cursor=pointer]:
+          - generic [ref=f19e29]: "1"
+        - link "Comprar Agora" [ref=f19e30] [cursor=pointer]:
+          - /url: "#buy-cta"
+  - main [ref=f19e33]:
+    - generic [ref=f19e34]:
+      - navigation "Breadcrumbs" [ref=f19e35]:
+        - link "Início" [ref=f19e36] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f19e37]: /
+        - link "Catálogo (Pág. 2)" [ref=f19e38] [cursor=pointer]:
+          - /url: /pagina-2
+        - generic [ref=f19e39]: /
+        - generic [ref=f19e40]: MOD. 01/09
+        - generic [ref=f19e41]: /
+        - generic [ref=f19e42]: BNI Nikiti 0.1 — Pigmentum Original
+      - generic [ref=f19e43]:
+        - generic [ref=f19e44]:
+          - generic [ref=f19e45]: Seletor de Instrumentos // 09 Modelos Disponíveis
+          - link "← Grade Completa" [ref=f19e48] [cursor=pointer]:
+            - /url: /pagina-2
+        - generic [ref=f19e50]:
+          - button "MOD. 01/09 BNI Nikiti 0.1 0.10mm" [ref=f19e51] [cursor=pointer]:
+            - generic [ref=f19e52]: MOD. 01/09
+            - generic [ref=f19e53]: BNI Nikiti 0.1
+            - generic [ref=f19e54]: 0.10mm
+          - button "MOD. 02/09 BNI Nikiti 0.05 0.05mm" [ref=f19e55] [cursor=pointer]:
+            - generic [ref=f19e56]: MOD. 02/09
+            - generic [ref=f19e57]: BNI Nikiti 0.05
+            - generic [ref=f19e58]: 0.05mm
+          - button "MOD. 03/09 BNI Nikiti 0.2 0.20mm" [ref=f19e59] [cursor=pointer]:
+            - generic [ref=f19e60]: MOD. 03/09
+            - generic [ref=f19e61]: BNI Nikiti 0.2
+            - generic [ref=f19e62]: 0.20mm
+          - button "MOD. 04/09 BNI Nikiti 0.35 0.35mm" [ref=f19e63] [cursor=pointer]:
+            - generic [ref=f19e64]: MOD. 04/09
+            - generic [ref=f19e65]: BNI Nikiti 0.35
+            - generic [ref=f19e66]: 0.35mm
+          - button "MOD. 05/09 BNI Nikiti 0.5 0.50mm" [ref=f19e67] [cursor=pointer]:
+            - generic [ref=f19e68]: MOD. 05/09
+            - generic [ref=f19e69]: BNI Nikiti 0.5
+            - generic [ref=f19e70]: 0.50mm
+          - button "MOD. 06/09 BNI Nikiti 0.8 0.80mm" [ref=f19e71] [cursor=pointer]:
+            - generic [ref=f19e72]: MOD. 06/09
+            - generic [ref=f19e73]: BNI Nikiti 0.8
+            - generic [ref=f19e74]: 0.80mm
+          - button "MOD. 07/09 BNI Nikiti 0.15mm" [ref=f19e75] [cursor=pointer]:
+            - generic [ref=f19e76]: MOD. 07/09
+            - generic [ref=f19e77]: BNI Nikiti
+            - generic [ref=f19e78]: 0.15mm
+          - button "MOD. 08/09 BNI Nikiti Artisan 0.25mm" [ref=f19e79] [cursor=pointer]:
+            - generic [ref=f19e80]: MOD. 08/09
+            - generic [ref=f19e81]: BNI Nikiti Artisan
+            - generic [ref=f19e82]: 0.25mm
+          - button "MOD. 09/09 BNI Nikiti Aero 0.10mm" [ref=f19e83] [cursor=pointer]:
+            - generic [ref=f19e84]: MOD. 09/09
+            - generic [ref=f19e85]: BNI Nikiti Aero
+            - generic [ref=f19e86]: 0.10mm
+      - generic [ref=f19e87]:
+        - generic [ref=f19e88]:
+          - generic [ref=f19e89]:
+            - generic [ref=f19e90]:
+              - generic [ref=f19e91]: REGISTRO OFICIAL CNC // 1:1 REAL SCALE
+              - generic [ref=f19e94]: MOD. 01/09
+            - generic [ref=f19e95]:
+              - img "BNI Nikiti 0.1 — Pigmentum Original" [ref=f19e96]
+              - button "Ampliar foto da caneta" [ref=f19e97] [cursor=pointer]:
+                - generic [ref=f19e103]: Ampliar 1:1
+              - generic:
+                - generic: "PONTA: 0.10mm Esfera Cerâmica"
+                - generic: "CHASSI: Alumínio"
+          - generic [ref=f19e104]:
+            - button [ref=f19e105] [cursor=pointer]:
+              - img "BNI Nikiti 0.1 — Pigmentum Original" [ref=f19e106]
+            - button [ref=f19e107] [cursor=pointer]:
+              - img "BNI Nikiti 0.05 — Micron Isograph" [ref=f19e108]
+            - button [ref=f19e109] [cursor=pointer]:
+              - img "BNI Nikiti 0.2 — Drafter Pro" [ref=f19e110]
+            - button [ref=f19e111] [cursor=pointer]:
+              - img "BNI Nikiti 0.35 — Blueprint Master" [ref=f19e112]
+            - button [ref=f19e113] [cursor=pointer]:
+              - img "BNI Nikiti 0.5 — Monolith Matte" [ref=f19e114]
+            - button [ref=f19e115] [cursor=pointer]:
+              - img "BNI Nikiti 0.8 — Bold Calligraph" [ref=f19e116]
+            - button [ref=f19e117] [cursor=pointer]:
+              - img "BNI Nikiti — Phantom Stealth" [ref=f19e118]
+            - button [ref=f19e119] [cursor=pointer]:
+              - img "BNI Nikiti Artisan — Raw Brass 0.25" [ref=f19e120]
+            - button [ref=f19e121] [cursor=pointer]:
+              - img "BNI Nikiti Aero — Feather Carbon 0.1" [ref=f19e122]
+          - generic [ref=f19e123]:
+            - generic [ref=f19e124]:
+              - generic [ref=f19e125]: CALIBRE DO TRAÇO
+              - strong [ref=f19e126]: 0.10mm
+              - text: Tolerância ±0.001mm
+            - generic [ref=f19e127]:
+              - generic [ref=f19e128]: MASSA TOTAL
+              - strong [ref=f19e129]: 18.4g
+              - text: Equilíbrio Neutro
+            - generic [ref=f19e130]:
+              - generic [ref=f19e131]: CENTRO DE MASSA
+              - strong [ref=f19e132]: 52%
+              - text: Da ponteira frontal
+            - generic [ref=f19e133]:
+              - generic [ref=f19e134]: MECANISMO
+              - strong [ref=f19e135]: Trava
+              - text: Hermético
+        - generic [ref=f19e136]:
+          - generic [ref=f19e137]:
+            - generic [ref=f19e138]:
+              - generic [ref=f19e139]:
+                - generic [ref=f19e140]: MOD. 01/09
+                - generic [ref=f19e141]: "|"
+                - generic [ref=f19e142]: micropontas
+              - generic [ref=f19e143]: Lote 02 em Produção
+            - generic [ref=f19e146]: Série Nanquim Absoluto
+            - heading "BNI Nikiti 0.1 — Pigmentum Original" [level=1] [ref=f19e147]
+            - generic [ref=f19e148]:
+              - generic [ref=f19e149]:
+                - generic [ref=f19e150]: Preço de Lançamento
+                - generic [ref=f19e151]: R$ 649/ unidade completa
+              - generic [ref=f19e152]:
+                - text: Condição Exclusiva
+                - generic [ref=f19e153]: Prioridade Lote 02
+            - generic [ref=f19e154]:
+              - paragraph [ref=f19e155]: O modelo emblemático da marca. Desenvolvido para traçado milimétrico em papel vegetal e croquis de detalhamento fino.
+              - paragraph [ref=f19e156]: A BNI Nikiti 0.1 é a pedra angular da nossa engenharia de escrita técnica. Fruto de 18 meses de testes balísticos e fluidodinâmicos, este instrumento entrega um traço contínuo de 0.10mm sem interrupções microscópicas. O corpo em alumínio aeroespacial 7075-T6 dissipa o calor do toque e mantém o fluxo de nanquim em pressão barométrica neutra, mesmo em traçados rápidos.
+            - generic [ref=f19e157]:
+              - generic [ref=f19e158]:
+                - generic [ref=f19e159]: "Tintas Arquivais Compatíveis:"
+                - generic [ref=f19e160]: Nanquim Profundo
+              - generic [ref=f19e161]:
+                - button "Nanquim Profundo" [ref=f19e162] [cursor=pointer]
+                - button "Índigo Meia-Noite" [ref=f19e165] [cursor=pointer]
+                - button "Sépia Arquival" [ref=f19e168] [cursor=pointer]
+              - generic [ref=f19e171]:
+                - generic [ref=f19e172]:
+                  - text: "Secagem Estimada:"
+                  - strong [ref=f19e173]: 1.6s
+                - generic [ref=f19e174]:
+                  - text: "Resistência Arquival:"
+                  - strong [ref=f19e175]: 100+ anos (ISO)
+          - generic [ref=f19e176]:
+            - button "Avise-me quando chegar ✦ Lote Prioritário" [ref=f19e177] [cursor=pointer]:
+              - generic [ref=f19e181]: Avise-me quando chegar
+              - generic [ref=f19e182]: ✦ Lote Prioritário
+            - generic [ref=f19e183]:
+              - link "← Voltar ao Catálogo" [ref=f19e184] [cursor=pointer]:
+                - /url: /pagina-2
+              - button "Copiar Link Direto" [ref=f19e186] [cursor=pointer]
+            - generic [ref=f19e194]:
+              - generic [ref=f19e195]:
+                - generic [ref=f19e196]: GARANTIA
+                - text: Vitalícia CNC
+              - generic [ref=f19e197]:
+                - generic [ref=f19e198]: CALIBRAÇÃO
+                - text: 1ª Gratuita
+              - generic [ref=f19e199]:
+                - generic [ref=f19e200]: ESTOJO
+                - text: Alumínio + EVA
+      - region "Especificações Técnicas Oficiais" [ref=f19e201]:
+        - generic [ref=f19e202]:
+          - generic [ref=f19e203]:
+            - generic [ref=f19e204]: DOCUMENTAÇÃO DE ENGENHARIA // TOLERÂNCIAS ISO
+            - heading "Especificações Técnicas Oficiais" [level=2] [ref=f19e205]
+          - generic [ref=f19e206]:
+            - text: "Protocolo de Calibração:"
+            - strong [ref=f19e207]: BNI-7075-REV4
+        - generic [ref=f19e208]:
+          - generic [ref=f19e209]:
+            - generic [ref=f19e210]:
+              - generic [ref=f19e211]: 01 /
+              - generic [ref=f19e212]: CHASSI & METALURGIA
+            - generic [ref=f19e213]:
+              - generic [ref=f19e214]:
+                - term [ref=f19e215]: "Liga do Corpo:"
+                - definition [ref=f19e216]: Alumínio 7075-T6 Usinado
+              - generic [ref=f19e217]:
+                - term [ref=f19e218]: "Acabamento Superficial:"
+                - definition [ref=f19e219]: Anodizado Fosco Acetinado 25µm
+              - generic [ref=f19e220]:
+                - term [ref=f19e221]: "Diâmetro do Corpo:"
+                - definition [ref=f19e222]: 9.8mm de empunhadura
+              - generic [ref=f19e223]:
+                - term [ref=f19e224]: "Comprimento:"
+                - definition [ref=f19e225]: 142mm com tampa travada
+          - generic [ref=f19e226]:
+            - generic [ref=f19e227]:
+              - generic [ref=f19e228]: 02 /
+              - generic [ref=f19e229]: PONTEIRA & FLUXO
+            - generic [ref=f19e230]:
+              - generic [ref=f19e231]:
+                - term [ref=f19e232]: "Configuração da Ponta:"
+                - definition [ref=f19e233]: 0.10mm Esfera Cerâmica
+              - generic [ref=f19e234]:
+                - term [ref=f19e235]: "Geometria e Tolerância:"
+                - definition [ref=f19e236]: Esfera de carbeto de silício com tolerância de ±0.001mm e retentor em aço cirúrgico.
+              - generic [ref=f19e237]:
+                - term [ref=f19e238]: "Consumo de Pigmento:"
+                - definition [ref=f19e239]: 0.08 ml/metro linear
+          - generic [ref=f19e240]:
+            - generic [ref=f19e241]:
+              - generic [ref=f19e242]: 03 /
+              - generic [ref=f19e243]: MECÂNICA & FECHAMENTO
+            - generic [ref=f19e244]:
+              - generic [ref=f19e245]:
+                - term [ref=f19e246]: "Mecanismo de Abertura:"
+                - definition [ref=f19e247]: Trava Neodímio N52
+              - generic [ref=f19e248]:
+                - term [ref=f19e249]: "Vedação Barométrica:"
+                - definition [ref=f19e250]: O-Ring Duplo Viton® FKM
+              - generic [ref=f19e251]:
+                - term [ref=f19e252]: "Balanço Estático:"
+                - definition [ref=f19e253]: 52% a partir da ponteira
+          - generic [ref=f19e254]:
+            - generic [ref=f19e255]:
+              - generic [ref=f19e256]: 04 /
+              - generic [ref=f19e257]: MÍDIAS & GARANTIA
+            - generic [ref=f19e258]:
+              - generic [ref=f19e259]:
+                - term [ref=f19e260]: "Papéis Homologados:"
+                - definition [ref=f19e261]: Vegetal 90g, Sulfite Técnico, Bristol 240g
+              - generic [ref=f19e262]:
+                - term [ref=f19e263]: "Termos de Cobertura:"
+                - definition [ref=f19e264]: Garantia Vitalícia com 1ª Recalibragem Gratuita
+              - generic [ref=f19e265]:
+                - term [ref=f19e266]: "Certificação:"
+                - definition [ref=f19e267]: ISO 14145-2 (Arquival)
+      - generic [ref=f19e268]:
+        - generic [ref=f19e269]:
+          - generic [ref=f19e270]: LINHA COMPLETA
+          - heading "Quer comparar todos os 9 instrumentos lado a lado?" [level=3] [ref=f19e271]
+          - paragraph [ref=f19e272]: Acesse a página de catálogo (Página 2) com filtros e visão geral de todos os modelos de ponta e materiais.
+        - link "Ver Catálogo Geral (Página 2) →" [ref=f19e274] [cursor=pointer]:
+          - /url: /pagina-2
+    - generic [ref=f19e315]:
+      - button "Fechar Modal" [ref=f19e316] [cursor=pointer]
+      - generic [ref=f19e320]:
+        - generic [ref=f19e321]:
+          - img "Caneta Selecionada" [ref=f19e323]
+          - generic [ref=f19e324]:
+            - generic [ref=f19e325]:
+              - generic [ref=f19e326]: MOD. 01/09
+              - generic [ref=f19e327]: ●
+              - generic [ref=f19e328]: 0.10mm
+            - heading "BNI Nikiti 0.1 — Pigmentum Original" [level=4] [ref=f19e329]
+            - text: R$ 649
+        - heading "Inscrição para Notificação de Lote" [level=3] [ref=f19e330]
+        - paragraph [ref=f19e331]: Cadastre seu e-mail profissional para receber acesso prioritário 24 horas antes da abertura do próximo lote de usinagem, com condição exclusiva.
+        - generic [ref=f19e332]:
+          - generic [ref=f19e333]:
+            - generic [ref=f19e334]: Nome Completo *
+            - textbox "Nome Completo *" [active] [ref=f19e335]:
+              - /placeholder: Lucas Mendes
+          - generic [ref=f19e336]:
+            - generic [ref=f19e337]: Número do Telefone / WhatsApp *
+            - textbox "Número do Telefone / WhatsApp *" [ref=f19e338]:
+              - /placeholder: (21) 98765-4321
+          - generic [ref=f19e339]:
+            - generic [ref=f19e340]: E-mail Profissional *
+            - textbox "E-mail Profissional *" [ref=f19e341]:
+              - /placeholder: arquiteto@estudio.com.br
+          - generic [ref=f19e342]:
+            - generic [ref=f19e343]: Perfil de Utilização
+            - combobox "Perfil de Utilização" [ref=f19e344]:
+              - option "Uso Pessoal // Prancheta & Croquis Rápidos" [selected]
+              - option "Desenho Técnico & Pranchas Executivas"
+              - option "Escritório de Arquitetura // Pedido Corporativo"
+              - option "Coleção & Design de Instrumentos"
+          - button "Confirmar Notificação Prioritária ✦" [ref=f19e345] [cursor=pointer]:
+            - generic [ref=f19e346]: Confirmar Notificação Prioritária
+            - generic [ref=f19e347]: ✦
+    - generic:
+      - button "Fechar visualização"
+      - generic:
+        - img "Ampliação da caneta"
+        - generic: BNI Nikiti 0.1 — Pigmentum Original — 0.10mm Esfera Cerâmica
+  - contentinfo [ref=f19e276]:
+    - generic [ref=f19e277]:
+      - generic [ref=f19e278]: BNI NIKITI // PIGMENTUM 0.1
+      - generic [ref=f19e284]:
+        - link "Início" [ref=f19e285] [cursor=pointer]:
+          - /url: "#hero"
+        - link "Manifesto" [ref=f19e286] [cursor=pointer]:
+          - /url: "#specs"
+        - link "Estúdio" [ref=f19e287] [cursor=pointer]:
+          - /url: "#studio"
+        - link "Adquirir" [ref=f19e288] [cursor=pointer]:
+          - /url: "#buy-cta"
+        - link "Sistema v4.0" [ref=f19e289] [cursor=pointer]:
+          - /url: /assets/design_system.html
+      - generic [ref=f19e290]: © 2026 BNI NIKITI. PROJETADA PARA O RIGOR ARQUITETURAL.
+  - generic [ref=f19e293]:
+    - button "Menu" [ref=f19e294]
+    - button "Inspect" [ref=f19e300]
+    - button "Audit" [ref=f19e304]
+    - button "Settings" [ref=f19e309]

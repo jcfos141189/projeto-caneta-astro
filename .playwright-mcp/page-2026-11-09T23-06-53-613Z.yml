@@ -1,0 +1,303 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - navigation "Navegação Principal" [ref=e4]:
+        - link "Início" [ref=e5] [cursor=pointer]:
+          - /url: "#hero"
+        - link "Sobre" [ref=e6] [cursor=pointer]:
+          - /url: "#craft"
+        - link "Loja" [ref=e7] [cursor=pointer]:
+          - /url: "#specs"
+        - link "Sistema.v4" [ref=e8] [cursor=pointer]:
+          - /url: /assets/design_system.html
+      - link "Início BNI Nikiti" [ref=e9] [cursor=pointer]:
+        - /url: "#hero"
+        - generic [ref=e16]: BNI NIKITI.01
+      - generic [ref=e17]:
+        - button "Buscar" [ref=e18] [cursor=pointer]
+        - button "Sacola de Compras" [ref=e22] [cursor=pointer]:
+          - generic [ref=e26]: "1"
+        - link "Comprar Agora" [ref=e27] [cursor=pointer]:
+          - /url: "#buy-cta"
+  - main [ref=e30]:
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]: Série Pigmentum // Nanquim Arquival 0.1mm
+        - heading "Projetada & Exata Absoluta Precisão." [level=1] [ref=e37]:
+          - text: Projetada
+          - generic "BNI Nikiti" [ref=e38] [cursor=pointer]: "& Exata"
+          - generic [ref=e39]: Absoluta
+          - generic [ref=e40]: Precisão.
+        - paragraph [ref=e41]: Corpo usinado em alumínio aeroespacial calibrado ao milímetro. Tinta pigmentada japonesa à prova d'água que desliza sem falhas.
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: 01 / EQUILÍBRIO
+            - generic [ref=e45]: ● AO VIVO
+          - generic [ref=e46]: Suspensão Gravidade Zero
+          - generic [ref=e47]: Role a página para girar o cilindro balanceado de 18g.
+      - generic:
+        - generic: BNI NIKITI
+        - generic: SISTEMA DE TINTA PIGMENTUM // 0.1 MM
+      - complementary "Progresso de Quadros do Scroll" [ref=e48]:
+        - generic [ref=e49]: "01"
+        - generic [ref=e52]: "22"
+        - generic [ref=e53]: CONTROLE DE SCROLL
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - button "Comprar BNI Nikiti — R$ 649" [ref=e56] [cursor=pointer]
+          - generic [ref=e61]:
+            - generic "Avaliação de 4.9 de 5 estrelas" [ref=e62]
+            - generic [ref=e73]:
+              - generic [ref=e74]: 4.9 / 5.0
+              - generic [ref=e75]: +2.480 Arquitetos
+        - link "Role para Explorar" [ref=e76] [cursor=pointer]:
+          - /url: "#specs"
+    - generic [ref=e84]:
+      - generic [ref=e86]:
+        - generic [ref=e88]:
+          - img "BNI Nikiti 0.1 — Composição Artística Editorial" [ref=e89]
+          - generic [ref=e90]: Tolerância CNC ±0.005mm
+        - generic [ref=e93]: BNI NIKITI · ENGENHARIA AEROESPACIAL · 00/26
+        - generic [ref=e95]:
+          - generic [ref=e96]: LIGA 7075-T6 // ANODIZADA
+          - generic [ref=e97]: PIGMENTUM 0.10 MM
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - generic [aria-hidden]: 0.1MM
+          - generic [ref=e100]: 02 // Manifesto Tecnológico
+          - heading "Engenharia & Rigor redefine o traço arquitetural ." [level=2] [ref=e103]:
+            - text: Engenharia
+            - generic "Rigor BNI Nikiti" [ref=e104] [cursor=pointer]: "& Rigor"
+            - text: redefine o
+            - generic [ref=e105]: traço
+            - generic [ref=e106]: arquitetural
+            - text: .
+          - paragraph [ref=e107]: Forjada a partir de um bloco sólido de alumínio aeroespacial e submetida a uma calibragem axial micrométrica. A BNI Nikiti anula a resistência do atrito e converte o impulso criativo em linhas de rigor matemático absoluto.
+        - generic [ref=e108]:
+          - generic [ref=e109] [cursor=pointer]:
+            - generic [ref=e110]:
+              - generic [ref=e111]:
+                - generic [ref=e112]: "01"
+                - generic [ref=e113]: LIGA PURA
+              - heading "Alumínio Aeroespacial 7075-T6" [level=3] [ref=e119]:
+                - text: Alumínio
+                - generic [ref=e120]: Aeroespacial
+                - text: 7075-T6
+              - paragraph [ref=e121]: Usinagem CNC unibody a partir de barra maciça. Rigidez estrutural sem emendas e peso pluma calibrado em 18,4g para desenhar sem fadiga.
+            - generic [ref=e122]: CNC Monobloco
+          - generic [ref=e128] [cursor=pointer]:
+            - generic [ref=e129]:
+              - generic [ref=e130]:
+                - generic [ref=e131]: "02"
+                - generic [ref=e132]: PRECISÃO
+              - heading "Calibragem Axial 0.10 mm" [level=3] [ref=e137]:
+                - text: Calibragem
+                - generic [ref=e138]: Axial
+                - text: 0.10 mm
+              - paragraph [ref=e139]: Microponta de poliacetal protegida por colar de titânio. Garante espessura uniforme de 0.10mm em réguas e gabaritos sem flexão.
+            - generic [ref=e140]: Guia de Titânio
+          - generic [ref=e146] [cursor=pointer]:
+            - generic [ref=e147]:
+              - generic [ref=e148]:
+                - generic [ref=e149]: "03"
+                - generic [ref=e150]: ERGONOMIA
+              - heading "Eixo de Gravidade Zero" [level=3] [ref=e154]:
+                - text: Eixo de
+                - generic [ref=e155]: Gravidade
+                - text: Zero
+              - paragraph [ref=e156]: Centro de massa rebaixado para o terço inferior. A caneta assenta no papel pelo próprio peso natural, eliminando a pressão nos dedos.
+            - generic [ref=e157]: Zero-Fatigue Axis
+          - generic [ref=e163] [cursor=pointer]:
+            - generic [ref=e164]:
+              - generic [ref=e165]:
+                - generic [ref=e166]: "04"
+                - generic [ref=e167]: PIGMENTO
+              - heading "Tinta Nanquim Japonesa Arquival" [level=3] [ref=e171]:
+                - text: Tinta Nanquim
+                - generic [ref=e172]: Japonesa
+                - text: Arquival
+              - paragraph [ref=e173]: Partículas ultrafinas de carbono puro suspensas sob pressão. Secagem instantânea em 0,4s sem borrões e durabilidade de mais de 100 anos.
+            - generic [ref=e174]: Secagem 0,4s · ISO 14145
+        - generic [ref=e180]:
+          - generic [ref=e181]: Lote 01 Disponível // Calibragem Concluída
+          - link "Garantir Caneta BNI Nikiti" [ref=e184] [cursor=pointer]:
+            - /url: "#buy-cta"
+    - generic "Passe o cursor para pausar o fluxo técnico" [ref=e189]:
+      - generic [ref=e190]:
+        - generic [ref=e191]: BNI NIKITI // SISTEMA PIGMENTUM 0.1
+        - generic [ref=e193]: ✦
+        - generic [ref=e194]: LIGA AEROESPACIAL 7075-T6
+        - generic [ref=e195]: •
+        - generic [ref=e196]: TOLERÂNCIA CNC ±0.005MM
+        - generic [ref=e197]: ✦
+        - generic [ref=e198]: EIXO DE GRAVIDADE ZERO 18.4G
+        - generic [ref=e199]: •
+        - generic [ref=e200]: NANQUIM JAPONÊS ARQUIVAL ISO 14145
+        - generic [ref=e201]: ✦
+        - generic [ref=e202]: SECAGEM INSTANTÂNEA 0,4S
+        - generic [ref=e203]: •
+        - generic [ref=e204]: MICROPONTA GUIA PARA ESQUADROS 4MM
+        - generic [ref=e205]: ✦
+        - generic [ref=e206]: GARANTIA VITALÍCIA ESTRUTURAL
+        - generic [ref=e207]: •
+      - generic [aria-hidden] [ref=e208]:
+        - generic [ref=e209]: BNI NIKITI // SISTEMA PIGMENTUM 0.1
+        - generic [ref=e211]: ✦
+        - generic [ref=e212]: LIGA AEROESPACIAL 7075-T6
+        - generic [ref=e213]: •
+        - generic [ref=e214]: TOLERÂNCIA CNC ±0.005MM
+        - generic [ref=e215]: ✦
+        - generic [ref=e216]: EIXO DE GRAVIDADE ZERO 18.4G
+        - generic [ref=e217]: •
+        - generic [ref=e218]: NANQUIM JAPONÊS ARQUIVAL ISO 14145
+        - generic [ref=e219]: ✦
+        - generic [ref=e220]: SECAGEM INSTANTÂNEA 0,4S
+        - generic [ref=e221]: •
+        - generic [ref=e222]: MICROPONTA GUIA PARA ESQUADROS 4MM
+        - generic [ref=e223]: ✦
+        - generic [ref=e224]: GARANTIA VITALÍCIA ESTRUTURAL
+        - generic [ref=e225]: •
+    - generic [ref=e227]:
+      - generic [ref=e228]:
+        - generic [ref=e229]:
+          - generic [ref=e230]: 03 // Estúdio de Precisão & Experiência
+          - heading "Do pensamento & traço ao rigor milimétrico ." [level=2] [ref=e233]:
+            - text: Do pensamento
+            - generic "BNI Nikiti" [ref=e234] [cursor=pointer]: "& traço"
+            - text: ao rigor
+            - generic [ref=e235]: milimétrico
+            - text: .
+        - paragraph [ref=e236]: Experimente a física do contato com o papel em tempo real. Cada micrômetro da BNI Nikiti foi projetado para eliminar o atrito e conferir fidelidade absoluta entre o seu impulso criativo e a linha definitiva.
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - generic [ref=e240]: PRANCHA DE CALIBRAÇÃO 0.10MM // NANQUIM ARQUIVAL
+          - generic [ref=e243]:
+            - button "Traço Livre" [ref=e244] [cursor=pointer]
+            - button "✦ Croqui Arquitetural" [ref=e245] [cursor=pointer]
+            - button "Limpar" [ref=e246] [cursor=pointer]
+        - generic [ref=e247]:
+          - generic "Prancha interativa de desenho técnico 0.10mm" [ref=e248]
+          - generic:
+            - generic: Arraste para experimentar o traço
+            - generic: Simulação física real de fluxo de nanquim e calibragem de 0.10mm
+        - generic [ref=e249]:
+          - generic [ref=e250]:
+            - generic [ref=e251]:
+              - text: "COORDENADAS:"
+              - strong [ref=e252]: "X: 000 · Y: 000"
+            - generic [ref=e253]:
+              - text: "VELOCIDADE:"
+              - strong [ref=e254]: 0 mm/s
+          - generic [ref=e255]:
+            - generic [ref=e256]:
+              - text: "FLUXO DE TINTA:"
+              - strong [ref=e257]: 100% REGULADO
+            - generic [ref=e258]: ● CALIBRADA ±0.005MM
+      - generic [ref=e259]:
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - generic [ref=e262]: MÓDULO 01
+            - heading "Cilindro Monobloco Alumínio 7075" [level=3] [ref=e265]:
+              - text: Cilindro Monobloco
+              - generic [ref=e266]: Alumínio 7075
+            - paragraph [ref=e267]: Barra maciça forjada a frio e desbastada em centros CNC aeroespaciais. Sem qualquer junção soldada ou ponto de fadiga mecânica.
+          - generic [ref=e268]:
+            - generic [ref=e269]: Dureza 150 HB
+            - generic [ref=e270]: Usinagem CNC 5 Eixos
+        - generic [ref=e271]:
+          - generic [ref=e272]:
+            - generic [ref=e273]: MÓDULO 02
+            - heading "Eixo Gravidade Zero Equilíbrio 18.4g" [level=3] [ref=e276]:
+              - text: Eixo Gravidade Zero
+              - generic [ref=e277]: Equilíbrio 18.4g
+            - paragraph [ref=e278]: O centro de massa foi matematicamente posicionado no terço inferior para que a caneta assente com firmeza no papel pelo próprio peso.
+          - generic [ref=e279]:
+            - generic [ref=e280]: Torque Zero
+            - generic [ref=e281]: Sem Fadiga Muscular
+        - generic [ref=e282]:
+          - generic [ref=e283]:
+            - generic [ref=e284]: MÓDULO 03
+            - heading "Microponta & Colar Titânio Grau 5" [level=3] [ref=e287]:
+              - text: Microponta & Colar
+              - generic [ref=e288]: Titânio Grau 5
+            - paragraph [ref=e289]: Guia cilíndrica alongada de 4mm em titânio que proporciona visão periférica límpida do traço em conjunto com esquadros e réguas pesadas.
+          - generic [ref=e290]:
+            - generic [ref=e291]: Poliacetal Calibrado
+            - generic [ref=e292]: Espessura 0.10mm
+      - generic [ref=e294]:
+        - generic [ref=e295]:
+          - generic [ref=e296]:
+            - text: BENCHMARK COMPARATIVO
+            - heading "A Diferença que se Sente no Traço" [level=3] [ref=e297]
+          - generic [ref=e298]: Normas ISO 14145-2 & ASTM B221
+        - generic [ref=e299]:
+          - generic [ref=e300]:
+            - generic [ref=e301]: Constância do Traço
+            - generic [ref=e302]:
+              - generic [ref=e304]: 0.10mm rigorosamente constante
+              - generic [ref=e305]: BNI NIKITI
+            - generic [ref=e306]: "Canetas comuns: Oscila 0.4mm a 1.2mm com vazamentos"
+          - generic [ref=e307]:
+            - generic [ref=e308]: Resistência do Pigmento
+            - generic [ref=e309]:
+              - generic [ref=e311]: Nanquim japonês arquival 100+ anos
+              - generic [ref=e312]: À PROVA D'ÁGUA
+            - generic [ref=e313]: "Canetas comuns: Tinta solúvel que borra e desbota ao sol"
+          - generic [ref=e314]:
+            - generic [ref=e315]: Chassi & Construção
+            - generic [ref=e316]:
+              - generic [ref=e318]: Alumínio Aeroespacial 7075 usinado
+              - generic [ref=e319]: UNIBODY
+            - generic [ref=e320]: "Canetas comuns: Corpo em plástico descartável de 6g"
+          - generic [ref=e321]:
+            - generic [ref=e322]: Ciclo de Vida & Garantia
+            - generic [ref=e323]:
+              - generic [ref=e325]: Garantia Estrutural Vitalícia
+              - generic [ref=e326]: PERPÉTUA
+            - generic [ref=e327]: "Canetas comuns: Descarte após 200m de traço"
+      - generic [ref=e329]:
+        - generic [ref=e330]:
+          - text: EDIÇÃO COMPLETA DE ESTÚDIO
+          - heading "Tudo o que você precisa para desenhar sem limites." [level=3] [ref=e331]
+          - paragraph [ref=e332]: Cada unidade da BNI Nikiti Pigmentum 0.1 é calibrada manualmente em laboratório, numerada e acompanhada de refis de nanquim e estojo protetor de transporte.
+          - generic [ref=e333]:
+            - generic [ref=e334]:
+              - generic [ref=e335]: ✓
+              - text: 1x Caneta BNI Nikiti (Alumínio 7075)
+            - generic [ref=e336]:
+              - generic [ref=e337]: ✓
+              - text: 3x Recargas Nanquim Japonês 0.1mm
+            - generic [ref=e338]:
+              - generic [ref=e339]: ✓
+              - text: 1x Estojo Metálico de Proteção Anodizado
+            - generic [ref=e340]:
+              - generic [ref=e341]: ✓
+              - text: 1x Certificado Individual Assinado
+        - generic [ref=e342]:
+          - generic [ref=e343]:
+            - generic [ref=e344]: Preço Especial de Lançamento
+            - generic [ref=e345]: R$ 649 ou 12x R$ 62,80
+          - button "Comprar BNI Nikiti Agora" [ref=e348] [cursor=pointer]
+          - generic [ref=e352]:
+            - generic [ref=e353]: ✦ FRETE GRÁTIS BRASIL
+            - generic [ref=e354]: ✦ 30 DIAS TESTE
+            - generic [ref=e355]: ✦ ENVIO EM 24H
+    - generic [ref=e357]:
+      - generic [ref=e358]: BNI NIKITI // PIGMENTUM 0.1
+      - generic [ref=e364]:
+        - link "Início" [ref=e365] [cursor=pointer]:
+          - /url: "#hero"
+        - link "Manifesto" [ref=e366] [cursor=pointer]:
+          - /url: "#specs"
+        - link "Estúdio" [ref=e367] [cursor=pointer]:
+          - /url: "#studio"
+        - link "Adquirir" [ref=e368] [cursor=pointer]:
+          - /url: "#buy-cta"
+        - link "Sistema v4.0" [ref=e369] [cursor=pointer]:
+          - /url: /assets/design_system.html
+      - generic [ref=e370]: © 2026 BNI NIKITI. PROJETADA PARA O RIGOR ARQUITETURAL.
+  - generic [ref=e373]:
+    - button "Menu" [ref=e374]
+    - button "Inspect" [ref=e380]
+    - button "Audit" [ref=e384]
+    - button "Settings" [ref=e389]
