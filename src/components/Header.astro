@@ -11,13 +11,32 @@ const { activeItem = "inicio" } = Astro.props;
 const isSubpage = activeItem !== "inicio";
 ---
 
-<header id="site-header" class={`site-header py-4 md:py-5 px-6 md:px-12 lg:px-16 ${isSubpage ? 'is-subpage is-scrolled' : ''}`}>
+<header id="site-header" class={`site-header py-3.5 sm:py-4 md:py-5 px-4 sm:px-6 md:px-12 lg:px-16 ${isSubpage ? 'is-subpage is-scrolled' : ''}`}>
     <div
         class="max-w-[1440px] mx-auto flex items-center justify-between relative"
     >
-        <!-- Left Navigation -->
+        <!-- Mobile Menu Toggle Button (visível apenas abaixo de lg: 1024px) -->
+        <div class="flex items-center lg:hidden">
+            <button
+                type="button"
+                id="mobile-menu-toggle"
+                class="p-2 -ml-1 rounded-lg text-stone-800 hover:text-stone-900 hover:bg-stone-200/60 focus:outline-none focus:ring-2 focus:ring-stone-400/50 transition-colors flex items-center justify-center cursor-pointer nav-anim-item"
+                aria-label="Abrir Menu de Navegação"
+                aria-expanded="false"
+                aria-controls="mobile-menu-drawer"
+            >
+                <div class="w-5 h-3.5 flex flex-col justify-between relative pointer-events-none">
+                    <span id="ham-line-1" class="w-full h-0.5 bg-stone-900 rounded-full transition-all duration-300 transform origin-center"></span>
+                    <span id="ham-line-2" class="w-full h-0.5 bg-stone-900 rounded-full transition-all duration-300 transform origin-center"></span>
+                    <span id="ham-line-3" class="w-full h-0.5 bg-stone-900 rounded-full transition-all duration-300 transform origin-center"></span>
+                </div>
+                <span class="sr-only">Menu</span>
+            </button>
+        </div>
+
+        <!-- Left Desktop Navigation (escondido no mobile para evitar sobreposição com o logo) -->
         <nav
-            class="flex items-center gap-5 md:gap-7"
+            class="hidden lg:flex items-center gap-5 xl:gap-7"
             aria-label="Navegação Principal"
         >
             <a
@@ -48,22 +67,22 @@ const isSubpage = activeItem !== "inicio";
             >
             <a
                 href="/assets/design_system.html"
-                class="nav-link hidden lg:inline-block font-mono text-[11px] uppercase tracking-widest text-stone-500 nav-anim-item"
+                class="nav-link hidden xl:inline-block font-mono text-[11px] uppercase tracking-widest text-stone-500 nav-anim-item"
                 >Sistema.v4</a
             >
         </nav>
 
-        <!-- Center Brand Logo -->
+        <!-- Center Brand Logo (perfeitamente centralizado e livre de colisões) -->
         <a
-            href="#hero"
-            class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5 group nav-anim-item"
+            href="/"
+            class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-2.5 group nav-anim-item shrink-0"
             aria-label="Início BNI Nikiti"
         >
             <div
-                class="w-7 h-7 rounded-full border border-stone-900 flex items-center justify-center bg-white group-hover:bg-stone-900 group-hover:text-white transition-colors duration-500"
+                class="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-stone-900 flex items-center justify-center bg-white group-hover:bg-stone-900 group-hover:text-white transition-colors duration-500"
             >
                 <svg
-                    class="w-3.5 h-3.5 transition-transform duration-500 group-hover:rotate-45"
+                    class="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform duration-500 group-hover:rotate-45"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -78,20 +97,20 @@ const isSubpage = activeItem !== "inicio";
                 </svg>
             </div>
             <span
-                class="font-display font-bold tracking-[-0.04em] text-base md:text-lg text-stone-900"
+                class="font-display font-bold tracking-[-0.04em] text-sm sm:text-base md:text-lg text-stone-900 whitespace-nowrap"
             >
                 BNI NIKITI<span
-                    class="font-mono font-normal text-[11px] text-stone-400 ml-0.5"
+                    class="font-mono font-normal text-[10px] sm:text-[11px] text-stone-400 ml-0.5"
                     >.01</span
                 >
             </span>
         </a>
 
         <!-- Right Icons & "Buy Now" Pill Button -->
-        <div class="flex items-center gap-2.5 md:gap-3.5">
+        <div class="flex items-center gap-2 sm:gap-2.5 md:gap-3.5">
             <IconButton
                 ariaLabel="Buscar"
-                class="hidden sm:inline-flex nav-anim-item"
+                class="hidden md:inline-flex nav-anim-item"
             >
                 <svg
                     class="w-4 h-4"
@@ -130,27 +149,150 @@ const isSubpage = activeItem !== "inicio";
                 </svg>
             </IconButton>
 
-            <Button
-                href="#buy-cta"
-                size="sm"
-                variant="beam"
-                class="nav-anim-item"
-            >
-                <span>Comprar Agora</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-[#FF3300]"></span>
-            </Button>
+            <div class="hidden sm:inline-flex">
+                <Button
+                    href="/#buy-cta"
+                    size="sm"
+                    variant="beam"
+                    class="nav-anim-item"
+                >
+                    <span>Comprar Agora</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF3300]"></span>
+                </Button>
+            </div>
         </div>
     </div>
 </header>
 
+    <!-- Mobile Navigation Drawer Overlay (Aparece abaixo do cabeçalho) -->
+    <div
+        id="mobile-menu-drawer"
+        class="fixed inset-x-0 bottom-0 z-[95] opacity-0 pointer-events-none -translate-y-2 transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 pb-12 lg:hidden overflow-y-auto border-t border-stone-300 shadow-2xl"
+        style="top: 64px; background-color: #F5F5F0;"
+    >
+        <div class="absolute inset-0 bg-grid-architect opacity-25 pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col gap-4">
+            <!-- Header Status Pill inside Drawer -->
+            <div class="flex items-center justify-between pb-3 border-b border-stone-300/80">
+                <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-stone-500 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#FF3300] animate-pulse"></span>
+                    <span>SISTEMA DE PRECISÃO // NIKITI</span>
+                </span>
+                <span class="font-mono text-[10px] text-stone-400 uppercase tracking-wider">
+                    SÉRIE 0.1MM
+                </span>
+            </div>
+
+            <!-- Links de Navegação Mobile Verticais -->
+            <nav class="flex flex-col gap-2 font-mono" aria-label="Links Mobile">
+                <a
+                    href="/#hero"
+                    class={`mobile-nav-link flex items-center justify-between p-3.5 rounded-xl border transition-all text-xs tracking-wider ${activeItem === 'inicio' ? 'bg-stone-900 text-white border-stone-900 font-bold shadow-xs' : 'bg-white/85 text-stone-800 border-stone-200/80 hover:bg-white hover:border-stone-900'}`}
+                >
+                    <span class="flex items-center gap-3">
+                        <span class="text-[10px] opacity-50">01</span>
+                        <span class="uppercase">Início</span>
+                    </span>
+                    <span class="text-xs text-stone-400">→</span>
+                </a>
+
+                <a
+                    href="/#craft"
+                    class={`mobile-nav-link flex items-center justify-between p-3.5 rounded-xl border transition-all text-xs tracking-wider ${activeItem === 'sobre' ? 'bg-stone-900 text-white border-stone-900 font-bold shadow-xs' : 'bg-white/85 text-stone-800 border-stone-200/80 hover:bg-white hover:border-stone-900'}`}
+                >
+                    <span class="flex items-center gap-3">
+                        <span class="text-[10px] opacity-50">02</span>
+                        <span class="uppercase">Sobre a Engenharia</span>
+                    </span>
+                    <span class="text-xs text-stone-400">→</span>
+                </a>
+
+                <a
+                    href="/#tintas"
+                    class="mobile-nav-link flex items-center justify-between p-3.5 rounded-xl border bg-white/85 text-stone-800 border-stone-200/80 hover:bg-white hover:border-stone-900 transition-all text-xs tracking-wider"
+                >
+                    <span class="flex items-center gap-3">
+                        <span class="text-[10px] opacity-50">03</span>
+                        <span class="uppercase">Paleta de Tintas</span>
+                    </span>
+                    <span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded bg-black text-white">Marquee</span>
+                </a>
+
+                <a
+                    href="/#specs"
+                    class={`mobile-nav-link flex items-center justify-between p-3.5 rounded-xl border transition-all text-xs tracking-wider ${activeItem === 'loja' ? 'bg-stone-900 text-white border-stone-900 font-bold shadow-xs' : 'bg-white/85 text-stone-800 border-stone-200/80 hover:bg-white hover:border-stone-900'}`}
+                >
+                    <span class="flex items-center gap-3">
+                        <span class="text-[10px] opacity-50">04</span>
+                        <span class="uppercase">Loja & Preço</span>
+                    </span>
+                    <span class="text-xs text-stone-400">→</span>
+                </a>
+
+                <a
+                    href="/pagina-2"
+                    class={`mobile-nav-link flex items-center justify-between p-3.5 rounded-xl border transition-all text-xs tracking-wider ${activeItem === 'catalogo' ? 'bg-stone-900 text-white border-stone-900 font-bold shadow-xs' : 'bg-white/85 text-stone-800 border-stone-200/80 hover:bg-white hover:border-stone-900'}`}
+                >
+                    <span class="flex items-center gap-3">
+                        <span class="text-[10px] opacity-50">05</span>
+                        <span class="uppercase">Catálogo Completo</span>
+                    </span>
+                    <span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded bg-[#FF3300]/15 text-[#FF3300] font-bold">09 Canetas</span>
+                </a>
+
+                <a
+                    href="/pagina-3"
+                    class={`mobile-nav-link flex items-center justify-between p-3.5 rounded-xl border transition-all text-xs tracking-wider ${activeItem === 'detalhes' ? 'bg-stone-900 text-white border-stone-900 font-bold shadow-xs' : 'bg-white/85 text-stone-800 border-stone-200/80 hover:bg-white hover:border-stone-900'}`}
+                >
+                    <span class="flex items-center gap-3">
+                        <span class="text-[10px] opacity-50">06</span>
+                        <span class="uppercase">Ficha Técnica & Detalhes</span>
+                    </span>
+                    <span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded bg-[#00CC66]/15 text-[#00CC66] font-bold">Ao Vivo</span>
+                </a>
+
+                <a
+                    href="/assets/design_system.html"
+                    class="mobile-nav-link flex items-center justify-between p-3.5 rounded-xl border bg-white/85 text-stone-600 border-stone-200/80 hover:bg-white text-xs tracking-wider"
+                >
+                    <span class="flex items-center gap-3">
+                        <span class="text-[10px] opacity-50">07</span>
+                        <span class="uppercase">Design System .v4</span>
+                    </span>
+                    <span class="text-xs text-stone-400">↗</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Botão CTA no rodapé do drawer -->
+        <div class="relative z-10 pt-5 mt-4 border-t border-stone-300/80 flex flex-col gap-2.5">
+            <Button href="/#buy-cta" variant="beam" size="lg" class="w-full justify-center shadow-md">
+                <span>Comprar BNI Nikiti — R$ 649</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-[#FF3300]"></span>
+            </Button>
+            <p class="font-mono text-[9px] text-center text-stone-400 uppercase tracking-widest">
+                Frete Expresso Segurado para todo o Brasil
+            </p>
+        </div>
+    </div>
+
 <script is:inline>
     (() => {
         const header = document.getElementById('site-header');
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const drawer = document.getElementById('mobile-menu-drawer');
+        const hamLine1 = document.getElementById('ham-line-1');
+        const hamLine2 = document.getElementById('ham-line-2');
+        const hamLine3 = document.getElementById('ham-line-3');
+
         if (!header) return;
         const isSubpage = header.classList.contains('is-subpage');
 
+        // Monitoramento de rolagem
         const updateHeader = () => {
-            if (isSubpage || window.scrollY > 15) {
+            const isDrawerOpen = drawer && !drawer.classList.contains('opacity-0');
+            if (isSubpage || window.scrollY > 15 || isDrawerOpen) {
                 header.classList.add('is-scrolled');
             } else {
                 header.classList.remove('is-scrolled');
@@ -159,5 +301,76 @@ const isSubpage = activeItem !== "inicio";
 
         window.addEventListener('scroll', updateHeader, { passive: true });
         updateHeader();
+
+        if (!menuToggle || !drawer) return;
+
+        let isOpen = false;
+
+        const openMenu = () => {
+            isOpen = true;
+            menuToggle.setAttribute('aria-expanded', 'true');
+            if (header) {
+                drawer.style.top = `${header.offsetHeight}px`;
+            }
+            drawer.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+            drawer.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            header.classList.add('is-scrolled');
+            document.body.classList.add('overflow-hidden');
+
+            if (hamLine1 && hamLine2 && hamLine3) {
+                hamLine1.style.transform = 'translateY(6px) rotate(45deg)';
+                hamLine2.style.opacity = '0';
+                hamLine3.style.transform = 'translateY(-6px) rotate(-45deg)';
+            }
+        };
+
+        const closeMenu = () => {
+            isOpen = false;
+            menuToggle.setAttribute('aria-expanded', 'false');
+            drawer.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            drawer.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
+            document.body.classList.remove('overflow-hidden');
+
+            if (!isSubpage && window.scrollY <= 15) {
+                header.classList.remove('is-scrolled');
+            }
+
+            if (hamLine1 && hamLine2 && hamLine3) {
+                hamLine1.style.transform = 'none';
+                hamLine2.style.opacity = '1';
+                hamLine3.style.transform = 'none';
+            }
+        };
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        // Fechar ao clicar em qualquer link
+        const mobileLinks = drawer.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMenu();
+            });
+        });
+
+        // Fechar com ESC
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isOpen) {
+                closeMenu();
+            }
+        });
+
+        // Fechar ao redimensionar para Desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024 && isOpen) {
+                closeMenu();
+            }
+        });
     })();
 </script>
