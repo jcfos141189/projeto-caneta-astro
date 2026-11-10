@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/tailwind.generated.css';
 
 interface Props {
     title?: string;
@@ -34,9 +35,6 @@ const isHome = activeItem === "inicio";
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pinyon+Script&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
     </noscript>
-
-    <!-- Static Compiled Design System Stylesheet (Zero Runtime Main-Thread Overhead) -->
-    <link rel="stylesheet" href="/assets/css/tailwind.generated.css" />
 
     {isHome && (
         <>
