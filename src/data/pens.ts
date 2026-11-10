@@ -55,7 +55,7 @@ export const PENS: Pen[] = [
         status: "Lote 02 em Produção",
         badgeColor: "text-[#00CC66]",
         category: "micropontas",
-        image: "/assets/pens/pen-1.jpg",
+        image: "/assets/pens/pen-1.webp",
         specs: {
             diameter: "9.8mm de empunhadura",
             length: "142mm com tampa travada",
@@ -87,7 +87,7 @@ export const PENS: Pen[] = [
         status: "Série Limitada (300 un.)",
         badgeColor: "text-[#FF3300]",
         category: "micropontas",
-        image: "/assets/pens/pen-2.jpg",
+        image: "/assets/pens/pen-2.webp",
         specs: {
             diameter: "9.2mm de empunhadura anatômica",
             length: "139mm",
@@ -119,7 +119,7 @@ export const PENS: Pen[] = [
         status: "Próximo Lançamento",
         badgeColor: "text-amber-500",
         category: "drafting",
-        image: "/assets/pens/pen-3.jpg",
+        image: "/assets/pens/pen-3.webp",
         specs: {
             diameter: "10.1mm com recartilhado sutil",
             length: "144mm",
@@ -151,7 +151,7 @@ export const PENS: Pen[] = [
         status: "Protótipo Aprovado",
         badgeColor: "text-blue-500",
         category: "drafting",
-        image: "/assets/pens/pen-4.jpg",
+        image: "/assets/pens/pen-4.webp",
         specs: {
             diameter: "10.4mm",
             length: "146mm",
@@ -183,7 +183,7 @@ export const PENS: Pen[] = [
         status: "Lista de Espera",
         badgeColor: "text-stone-400",
         category: "drafting",
-        image: "/assets/pens/pen-5.jpg",
+        image: "/assets/pens/pen-5.webp",
         specs: {
             diameter: "10.0mm",
             length: "141mm",
@@ -215,7 +215,7 @@ export const PENS: Pen[] = [
         status: "Em Calibração Final",
         badgeColor: "text-amber-500",
         category: "especiais",
-        image: "/assets/pens/pen-6.jpg",
+        image: "/assets/pens/pen-6.webp",
         specs: {
             diameter: "10.8mm",
             length: "143mm",
@@ -247,7 +247,7 @@ export const PENS: Pen[] = [
         status: "Edição Exclusiva",
         badgeColor: "text-stone-300",
         category: "especiais",
-        image: "/assets/pens/pen-7.jpg",
+        image: "/assets/pens/pen-7.webp",
         specs: {
             diameter: "9.6mm",
             length: "140mm",
@@ -279,7 +279,7 @@ export const PENS: Pen[] = [
         status: "Pré-Produção",
         badgeColor: "text-yellow-600",
         category: "especiais",
-        image: "/assets/pens/pen-8.jpg",
+        image: "/assets/pens/pen-8.webp",
         specs: {
             diameter: "10.2mm",
             length: "142mm",
@@ -311,7 +311,7 @@ export const PENS: Pen[] = [
         status: "Edição Flagship",
         badgeColor: "text-[#FF3300]",
         category: "micropontas",
-        image: "/assets/pens/pen-9.jpg",
+        image: "/assets/pens/pen-9.webp",
         specs: {
             diameter: "9.9mm",
             length: "140mm",

@@ -165,12 +165,18 @@ import InkColorsSection from '../components/InkColorsSection.astro';
                             <!-- Container da Obra de Arte com Moldura Editorial e Sombra Profunda -->
                             <div class="art-frame-container rounded-sm overflow-hidden p-3.5 sm:p-5 border border-stone-300/80 shadow-[0_25px_60px_-15px_rgba(28,28,28,0.12)]">
                                 <div class="relative overflow-hidden aspect-square rounded-[2px] bg-white">
-                                    <img
-                                        src="/assets/bni_nikiti_architectural_art.jpg"
-                                        alt="BNI Nikiti 0.1 — Composição Artística Editorial"
-                                        class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                                        loading="lazy"
-                                    />
+                                    <picture>
+                                        <source srcset="/assets/bni_nikiti_architectural_art.webp" type="image/webp" />
+                                        <img
+                                            src="/assets/bni_nikiti_architectural_art.jpg"
+                                            alt="BNI Nikiti 0.1 — Composição Artística Editorial"
+                                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                                            width="600"
+                                            height="600"
+                                            loading="lazy"
+                                            decoding="async"
+                                        />
+                                    </picture>
                                     <!-- Selo Holográfico / Técnico Flutuante -->
                                     <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1.5 border border-stone-300 rounded-sm shadow-sm flex items-center gap-2">
                                         <span class="w-1.5 h-1.5 rounded-full bg-[#FF3300] animate-pulse"></span>
@@ -715,11 +721,11 @@ import InkColorsSection from '../components/InkColorsSection.astro';
     </main>
 
     <!-- ==========================================================================
-         GSAP + SCROLLTRIGGER + REQUESTANIMATIONFRAME VIDEO SCRUBBING ENGINE
+         GSAP + SCROLLTRIGGER + REQUESTANIMATIONFRAME VIDEO SCRUBBING ENGINE (Bundled & Minified by Vite)
          ========================================================================== -->
-    <script is:inline>
+    <script>
         const initNikitiExperience = () => {
-            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || typeof Lenis === 'undefined') {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
                 setTimeout(initNikitiExperience, 50);
                 return;
             }
@@ -748,19 +754,22 @@ import InkColorsSection from '../components/InkColorsSection.astro';
             let currentFrameRendered = 1;
 
             // ------------------------------------------------------------------
-            // 0. LENIS SMOOTH SCROLL (Apple-grade Inertia & Momentum Physics)
+            // 0. LENIS SMOOTH SCROLL (Apenas Desktop - Mobile usa rolagem nativa 120Hz)
             // ------------------------------------------------------------------
-            const lenis = new Lenis({
-                duration: 1.25,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                smoothWheel: true,
-                wheelMultiplier: 0.95,
-            });
-            lenis.on('scroll', ScrollTrigger.update);
-            gsap.ticker.add((time) => {
-                lenis.raf(time * 1000);
-            });
-            gsap.ticker.lagSmoothing(0);
+            const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+            if (!isTouch && typeof Lenis !== 'undefined') {
+                const lenis = new Lenis({
+                    duration: 1.25,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    smoothWheel: true,
+                    wheelMultiplier: 0.95,
+                });
+                lenis.on('scroll', ScrollTrigger.update);
+                gsap.ticker.add((time) => {
+                    lenis.raf(time * 1000);
+                });
+                gsap.ticker.lagSmoothing(0);
+            }
 
             // ------------------------------------------------------------------
             // 1. CANVAS RESIZING & COVER RENDERING PIPELINE (Retina 60-120fps)
@@ -777,9 +786,55 @@ import InkColorsSection from '../components/InkColorsSection.astro';
             };
             window.addEventListener('resize', resizeCanvas, { passive: true });
 
+            // Carrega um frame específico sob demanda se ainda não estiver na memória
+            const requestFrame = (idx) => {
+                if (idx < 1 || idx > TOTAL_FRAMES || images[idx]) return;
+                const img = new Image();
+                img.src = getFramePath(idx);
+                img.onload = () => {
+                    images[idx] = img;
+                    if (currentFrameRendered === idx) {
+                        renderFrame(idx);
+                    }
+                };
+                images[idx] = img;
+            };
+
+            // Pré-carregamento em janela deslizante (apenas os quadros próximos da posição atual de rolagem)
+            const prefetchSurroundingFrames = (centerIndex) => {
+                for (let offset = 1; offset <= 4; offset++) {
+                    requestFrame(centerIndex + offset);
+                }
+                for (let offset = 1; offset <= 2; offset++) {
+                    requestFrame(centerIndex - offset);
+                }
+            };
+
             const renderFrame = (index) => {
                 currentFrameRendered = index;
-                const img = images[index];
+                let img = images[index];
+
+                // Carregamento sob demanda com fallback para o quadro mais próximo já carregado
+                if (!img || !img.complete || img.naturalWidth === 0) {
+                    requestFrame(index);
+                    // Busca quadro vizinho mais próximo para evitar qualquer piscada
+                    for (let offset = 1; offset <= 8; offset++) {
+                        const prev = images[index - offset];
+                        if (prev && prev.complete && prev.naturalWidth > 0) {
+                            img = prev;
+                            break;
+                        }
+                        const next = images[index + offset];
+                        if (next && next.complete && next.naturalWidth > 0) {
+                            img = next;
+                            break;
+                        }
+                    }
+                    if (!img || !img.complete || img.naturalWidth === 0) {
+                        img = images[1];
+                    }
+                }
+
                 if (!img || !img.complete || img.naturalWidth === 0) return;
 
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -804,23 +859,12 @@ import InkColorsSection from '../components/InkColorsSection.astro';
                 ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
             };
 
-            // Preload first frame immediately, then stream the rest into memory
+            // Carrega exclusivamente o 1º frame na carga inicial (economia massiva de payload de rede)
             const firstImg = new Image();
             firstImg.src = getFramePath(1);
             firstImg.onload = () => {
                 images[1] = firstImg;
                 resizeCanvas();
-                preloadRemainingFrames();
-            };
-
-            const preloadRemainingFrames = () => {
-                for (let i = 2; i <= TOTAL_FRAMES; i++) {
-                    const img = new Image();
-                    img.src = getFramePath(i);
-                    img.onload = () => {
-                        images[i] = img;
-                    };
-                }
             };
 
             // ------------------------------------------------------------------
@@ -899,12 +943,13 @@ import InkColorsSection from '../components/InkColorsSection.astro';
                 onUpdate: (self) => {
                     const progress = self.progress; // 0.0 -> 1.0
 
-                    // 1. Instant zero-latency canvas frame rendering
+                    // 1. Instant zero-latency canvas frame rendering + rolling window prefetch
                     const targetFrame = Math.min(
                         TOTAL_FRAMES,
                         Math.max(1, Math.round(1 + progress * (TOTAL_FRAMES - 1)))
                     );
                     renderFrame(targetFrame);
+                    prefetchSurroundingFrames(targetFrame);
 
                     // 2. Update right pagination indicator (01 / 22 -> 22 / 22)
                     const stepIndex = Math.min(

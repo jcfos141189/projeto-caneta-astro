@@ -11,6 +11,8 @@ const {
     title = "BNI Nikiti Pigmentum 0.1 — Caneta de Precisão Arquitetural", 
     activeItem = "inicio" 
 } = Astro.props;
+
+const isHome = activeItem === "inicio";
 ---
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
@@ -23,57 +25,29 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- Google Fonts (Design System Typography: Inter, Space Grotesk, Instrument Serif, JetBrains Mono, Alex Brush, Pinyon Script) -->
+    <!-- Preconnect to Font CDNs -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pinyon+Script&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Design System Local Stylesheets & Scripts -->
-    <link href="/assets/templates/digital-architect.aura.build/assets/css2_19fd9cc6b396.css" rel="stylesheet" />
-    <link href="/assets/templates/animations-gemini2/assets/css2_604c95cc5779.css" rel="stylesheet" />
-    <script is:inline src="/assets/templates/digital-architect.aura.build/assets/resource_3fa48481346f.js"></script>
-    <script is:inline src="/assets/templates/digital-architect.aura.build/assets/iconify-icon_d39ffc6e4c56.js"></script>
+    <!-- Google Fonts (Optimized Non-Blocking Font Loading) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pinyon+Script&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Pinyon+Script&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
+    </noscript>
 
-    <!-- GSAP & ScrollTrigger (Required CDN) -->
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Static Compiled Design System Stylesheet (Zero Runtime Main-Thread Overhead) -->
+    <link rel="stylesheet" href="/assets/css/tailwind.generated.css" />
 
-    <!-- Lenis Smooth Scrolling (Apple-grade Inertia & Momentum Scrolling) -->
-    <script is:inline src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    {isHome && (
+        <>
+            <!-- GSAP & ScrollTrigger (Deferred for Page Performance) -->
+            <script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+            <script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- Tailwind Config Mapped Directly from assets/design_system.html -->
-    <script is:inline>
-        if (typeof tailwind !== 'undefined') {
-            tailwind.config = {
-                darkMode: 'class',
-                theme: {
-                    extend: {
-                        fontFamily: {
-                            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-                            display: ['Space Grotesk', 'Inter', 'sans-serif'],
-                            serif: ['Instrument Serif', 'Georgia', 'serif'],
-                            mono: ['JetBrains Mono', 'monospace'],
-                            cursive: ['Alex Brush', 'Pinyon Script', 'cursive'],
-                            calligraphy: ['Pinyon Script', 'Alex Brush', 'cursive'],
-                        },
-                        colors: {
-                            architect: {
-                                white: '#FFFFFF',
-                                alabaster: '#F5F5F0',
-                                stone: '#EAEAE5',
-                                border: '#D6D3D1',
-                                muted: '#78716C',
-                                ink: '#1C1C1C',
-                            },
-                            accent: '#FF3300',
-                            lime: '#CCFF00',
-                            success: '#00CC66',
-                        }
-                    }
-                }
-            };
-        }
-    </script>
+            <!-- Lenis Smooth Scrolling (Deferred) -->
+            <script is:inline defer src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+        </>
+    )}
 </head>
 
 <body class="antialiased selection:bg-stone-900 selection:text-white">
@@ -266,19 +240,15 @@ const {
     }
 
     .lettering-image-clip {
-        background-image: 
-            linear-gradient(
-                135deg, 
-                rgba(28, 28, 28, 0.94) 0%, 
-                rgba(38, 35, 32, 0.88) 35%, 
-                rgba(125, 98, 68, 0.65) 52%, 
-                rgba(160, 130, 95, 0.55) 58%, 
-                rgba(38, 35, 32, 0.88) 68%, 
-                rgba(28, 28, 28, 0.94) 100%
-            ),
-            url("/assets/templates/digital-architect.aura.build/assets/c7fa69dd-d7fb-48f2-a866-ef3663_f6b789593f38.webp");
-        background-size: 100% 100%, cover;
-        background-position: center, center;
+        background: linear-gradient(
+            135deg, 
+            #1C1C1C 0%, 
+            #2B2825 30%, 
+            #8A6B47 50%, 
+            #C4A265 56%, 
+            #2B2825 70%, 
+            #1C1C1C 100%
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -429,6 +399,16 @@ const {
         justify-content: center;
         color: var(--text-primary);
         transition: all 0.35s var(--ease-out);
+    }
+
+    .icon-pill-btn.hidden {
+        display: none !important;
+    }
+
+    @media (min-width: 768px) {
+        .icon-pill-btn.md\:inline-flex {
+            display: inline-flex !important;
+        }
     }
 
     .icon-pill-btn:hover {

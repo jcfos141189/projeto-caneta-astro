@@ -88,8 +88,12 @@ const defaultPen = PENS[0];
                                 id="main-pen-image"
                                 src={defaultPen.image} 
                                 alt={defaultPen.title}
-                                class="w-full h-full object-cover object-center transition-all duration-500 cursor-zoom-in group-hover:scale-105"
+                                width="800"
+                                height="500"
                                 loading="eager"
+                                decoding="async"
+                                fetchpriority="high"
+                                class="w-full h-full object-cover object-center transition-all duration-500 cursor-zoom-in group-hover:scale-105"
                             />
                             
                             <!-- Gradiente Sutil de Fundo -->
@@ -598,11 +602,13 @@ const defaultPen = PENS[0];
 
     </main>
 
-    <!-- Script Cliente para Alternância Dinâmica de Modelos, Tintas e Modais -->
-    <script is:inline define:vars={{ pensData: PENS }}>
-        document.addEventListener('DOMContentLoaded', () => {
+    <!-- Script Cliente para Alternância Dinâmica de Modelos, Tintas e Modais (Minificado pelo Vite) -->
+    <script>
+        import { PENS } from '../data/pens';
+
+        const initDetailsPage = () => {
             // Mapeamento dos dados
-            const pens = pensData;
+            const pens = PENS;
             let currentPen = pens[0];
 
             // Elementos DOM
@@ -953,7 +959,13 @@ const defaultPen = PENS[0];
                     }
                 });
             }
-        });
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDetailsPage);
+        } else {
+            initDetailsPage();
+        }
     </script>
 </Layout>
 

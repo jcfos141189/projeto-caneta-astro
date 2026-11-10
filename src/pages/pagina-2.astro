@@ -47,7 +47,7 @@ import { PENS as pens } from '../data/pens';
 
             <!-- 2. Grade Responsiva com os 9 Cards de Canetas (3x3) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                {pens.map((pen) => (
+                {pens.map((pen, index) => (
                     <article 
                         class="p-6 sm:p-7 rounded-2xl border border-stone-300/80 bg-white/85 backdrop-blur-sm flex flex-col justify-between hover:border-stone-900 hover:shadow-[0_20px_45px_-10px_rgba(28,28,28,0.1)] transition-all duration-400 group relative"
                     >
@@ -76,8 +76,11 @@ import { PENS as pens } from '../data/pens';
                                 <img 
                                     src={pen.image} 
                                     alt={pen.title} 
+                                    width="600"
+                                    height="375"
                                     class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
-                                    loading="eager" 
+                                    loading={index < 2 ? "eager" : "lazy"} 
+                                    decoding="async"
                                 />
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 pointer-events-none"></div>
                                 <span class="absolute bottom-2.5 right-2.5 bg-stone-900/85 backdrop-blur-md text-white font-mono text-[9px] uppercase tracking-widest px-2.5 py-0.5 rounded border border-white/10 shadow-xs">
@@ -226,7 +229,7 @@ import { PENS as pens } from '../data/pens';
                     <!-- Mini Preview da Caneta no Modal -->
                     <div class="flex items-center gap-3 p-2.5 mb-4 rounded-xl border border-stone-200 bg-white shadow-2xs">
                         <div class="w-14 h-11 rounded-lg overflow-hidden bg-stone-100 shrink-0 border border-stone-200">
-                            <img id="modal-pen-img" src="/assets/pens/pen-1.jpg" alt="Preview da Caneta" class="w-full h-full object-cover" />
+                            <img id="modal-pen-img" src="/assets/pens/pen-1.webp" alt="Preview da Caneta" class="w-full h-full object-cover" width="56" height="44" loading="lazy" decoding="async" />
                         </div>
                         <div class="min-w-0">
                             <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-stone-500">
@@ -315,9 +318,9 @@ import { PENS as pens } from '../data/pens';
 
     </main>
 
-    <!-- Script Cliente para o Modal Interativo -->
-    <script is:inline>
-        document.addEventListener('DOMContentLoaded', () => {
+    <!-- Script Cliente para o Modal Interativo (Minificado pelo Vite) -->
+    <script>
+        const initCatalogPage = () => {
             const modal = document.getElementById('notify-modal');
             const modalBox = document.getElementById('notify-modal-box');
             const closeBtn = document.getElementById('close-modal-btn');
@@ -386,7 +389,7 @@ import { PENS as pens } from '../data/pens';
                     e.preventDefault();
                     const title = btn.getAttribute('data-pen-title') || 'Caneta BNI Nikiti';
                     const model = btn.getAttribute('data-pen-model') || 'SÉRIE LIMITADA';
-                    const img = btn.getAttribute('data-pen-img') || '/assets/pens/pen-1.jpg';
+                    const img = btn.getAttribute('data-pen-img') || '/assets/pens/pen-1.webp';
                     openModal(title, model, img);
                 });
             });
@@ -416,6 +419,12 @@ import { PENS as pens } from '../data/pens';
                     successContent.classList.remove('hidden');
                 });
             }
-        });
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCatalogPage);
+        } else {
+            initCatalogPage();
+        }
     </script>
 </Layout>
